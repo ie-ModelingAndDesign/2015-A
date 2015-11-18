@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		236B90531BFC5CBE0009F6AC /* CoreLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236B90521BFC5CBE0009F6AC /* CoreLocationController.swift */; };
 		6126EA581BECD0570052643C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6126EA571BECD0570052643C /* AppDelegate.swift */; };
 		6126EA5B1BECD0570052643C /* OkinawaPhotoCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6126EA591BECD0570052643C /* OkinawaPhotoCollection.xcdatamodeld */; };
 		6126EA5D1BECD0570052643C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6126EA5C1BECD0570052643C /* MasterViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		236B90521BFC5CBE0009F6AC /* CoreLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationController.swift; sourceTree = "<group>"; };
 		6126EA541BECD0570052643C /* OkinawaPhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OkinawaPhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6126EA571BECD0570052643C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6126EA5A1BECD0570052643C /* OkinawaPhotoCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OkinawaPhotoCollection.xcdatamodel; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				6126EA571BECD0570052643C /* AppDelegate.swift */,
 				6126EA5C1BECD0570052643C /* MasterViewController.swift */,
 				6126EA5E1BECD0570052643C /* DetailViewController.swift */,
+				236B90521BFC5CBE0009F6AC /* CoreLocationController.swift */,
 				6126EA601BECD0570052643C /* Main.storyboard */,
 				6126EA631BECD0570052643C /* Assets.xcassets */,
 				6126EA651BECD0570052643C /* LaunchScreen.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				236B90531BFC5CBE0009F6AC /* CoreLocationController.swift in Sources */,
 				6126EA581BECD0570052643C /* AppDelegate.swift in Sources */,
 				6126EA5B1BECD0570052643C /* OkinawaPhotoCollection.xcdatamodeld in Sources */,
 				6126EA5D1BECD0570052643C /* MasterViewController.swift in Sources */,
@@ -490,6 +494,7 @@
 				6126EA831BECD0570052643C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6126EA841BECD0570052643C /* Build configuration list for PBXNativeTarget "OkinawaPhotoCollectionTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +503,7 @@
 				6126EA861BECD0570052643C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6126EA871BECD0570052643C /* Build configuration list for PBXNativeTarget "OkinawaPhotoCollectionUITests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +512,7 @@
 				6126EA891BECD0570052643C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
