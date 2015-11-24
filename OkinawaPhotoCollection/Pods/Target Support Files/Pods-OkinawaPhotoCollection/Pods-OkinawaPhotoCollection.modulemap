@@ -1,0 +1,6 @@
+framework module Pods_OkinawaPhotoCollection {
+  umbrella header "Pods-OkinawaPhotoCollection-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -17,6 +17,7 @@
 		6126EA671BECD0570052643C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6126EA651BECD0570052643C /* LaunchScreen.storyboard */; };
 		6126EA721BECD0570052643C /* OkinawaPhotoCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6126EA711BECD0570052643C /* OkinawaPhotoCollectionTests.swift */; };
 		6126EA7D1BECD0570052643C /* OkinawaPhotoCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6126EA7C1BECD0570052643C /* OkinawaPhotoCollectionUITests.swift */; };
+		B7FC49909AA34B1A579B4ED8 /* Pods_OkinawaPhotoCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6BBEC5E44AB02C7D75A9F7 /* Pods_OkinawaPhotoCollection.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		068853F9544C2B40A58B8B8F /* Pods-OkinawaPhotoCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OkinawaPhotoCollection.release.xcconfig"; path = "Pods/Target Support Files/Pods-OkinawaPhotoCollection/Pods-OkinawaPhotoCollection.release.xcconfig"; sourceTree = "<group>"; };
 		236B90521BFC5CBE0009F6AC /* CoreLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationController.swift; sourceTree = "<group>"; };
 		6126EA541BECD0570052643C /* OkinawaPhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OkinawaPhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6126EA571BECD0570052643C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		6126EA781BECD0570052643C /* OkinawaPhotoCollectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OkinawaPhotoCollectionUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6126EA7C1BECD0570052643C /* OkinawaPhotoCollectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkinawaPhotoCollectionUITests.swift; sourceTree = "<group>"; };
 		6126EA7E1BECD0570052643C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D6BBEC5E44AB02C7D75A9F7 /* Pods_OkinawaPhotoCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OkinawaPhotoCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9865887ABE9A67E62F90CB44 /* Pods-OkinawaPhotoCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OkinawaPhotoCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OkinawaPhotoCollection/Pods-OkinawaPhotoCollection.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7FC49909AA34B1A579B4ED8 /* Pods_OkinawaPhotoCollection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		064A55FF4DE3CBC2D2A2E1BA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D6BBEC5E44AB02C7D75A9F7 /* Pods_OkinawaPhotoCollection.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6126EA4B1BECD0570052643C = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +100,8 @@
 				6126EA701BECD0570052643C /* OkinawaPhotoCollectionTests */,
 				6126EA7B1BECD0570052643C /* OkinawaPhotoCollectionUITests */,
 				6126EA551BECD0570052643C /* Products */,
+				EF8281CD9EF09467633F1E64 /* Pods */,
+				064A55FF4DE3CBC2D2A2E1BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +149,15 @@
 			path = OkinawaPhotoCollectionUITests;
 			sourceTree = "<group>";
 		};
+		EF8281CD9EF09467633F1E64 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9865887ABE9A67E62F90CB44 /* Pods-OkinawaPhotoCollection.debug.xcconfig */,
+				068853F9544C2B40A58B8B8F /* Pods-OkinawaPhotoCollection.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,9 +165,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6126EA811BECD0570052643C /* Build configuration list for PBXNativeTarget "OkinawaPhotoCollection" */;
 			buildPhases = (
+				9BDC11FB69F3B7F18F5450F6 /* Check Pods Manifest.lock */,
 				6126EA501BECD0570052643C /* Sources */,
 				6126EA511BECD0570052643C /* Frameworks */,
 				6126EA521BECD0570052643C /* Resources */,
+				B269963308AF84CE28ED3092 /* Embed Pods Frameworks */,
+				75D12EBFC21683A0196C6535 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -259,6 +286,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		75D12EBFC21683A0196C6535 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OkinawaPhotoCollection/Pods-OkinawaPhotoCollection-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BDC11FB69F3B7F18F5450F6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B269963308AF84CE28ED3092 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OkinawaPhotoCollection/Pods-OkinawaPhotoCollection-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6126EA501BECD0570052643C /* Sources */ = {
@@ -407,6 +482,7 @@
 		};
 		6126EA821BECD0570052643C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9865887ABE9A67E62F90CB44 /* Pods-OkinawaPhotoCollection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OkinawaPhotoCollection/Info.plist;
@@ -418,6 +494,7 @@
 		};
 		6126EA831BECD0570052643C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 068853F9544C2B40A58B8B8F /* Pods-OkinawaPhotoCollection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OkinawaPhotoCollection/Info.plist;
