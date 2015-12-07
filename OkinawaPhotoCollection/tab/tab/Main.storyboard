@@ -8,7 +8,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="V3A-Jg-nvE">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="XDm-rt-RnJ" customClass="TabBarController" customModule="OkinawaPhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="XDm-rt-RnJ" customClass="TabBarController" customModule="tab" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="s4s-Dl-Buj">
                         <autoresizingMask key="autoresizingMask"/>
@@ -34,7 +34,7 @@
         <!--場所-->
         <scene sceneID="1Ni-6b-0qx">
             <objects>
-                <viewController title="場所" id="ooq-G8-g7d" customClass="ThirdViewController" customModule="OkinawaPhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="場所" id="ooq-G8-g7d" customClass="ThirdViewController" customModule="tab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pf5-rh-bWW"/>
                         <viewControllerLayoutGuide type="bottom" id="4SL-0O-f1J"/>
@@ -159,12 +159,12 @@
         <!--年代-->
         <scene sceneID="B6U-zU-kPD">
             <objects>
-                <viewController title="年代" id="IKf-HH-HA2" customClass="FirstViewController" customModule="OkinawaPhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="年代" id="IKf-HH-HA2" customClass="FirstViewController" customModule="tab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hax-Hf-Q9u"/>
                         <viewControllerLayoutGuide type="bottom" id="XiK-6N-kim"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mEe-qj-wO6">
+                    <view key="view" contentMode="scaleToFill" id="mEe-qj-wO6" customClass="FirstViewContoller">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -217,12 +217,12 @@
         <!--目的-->
         <scene sceneID="5C5-5a-Rel">
             <objects>
-                <viewController title="目的" id="OPa-4w-7hK" customClass="SecondViewController" customModule="OkinawaPhotoCollection" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="目的" id="OPa-4w-7hK" customClass="SecondViewController" customModule="tab" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ou6-c1-aKi"/>
                         <viewControllerLayoutGuide type="bottom" id="TeF-05-6CE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="i93-BT-j71">
+                    <view key="view" contentMode="scaleToFill" id="i93-BT-j71" customClass="SecondViewController">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
