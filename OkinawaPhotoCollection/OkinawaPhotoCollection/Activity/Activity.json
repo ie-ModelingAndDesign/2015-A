@@ -1,0 +1,82 @@
+ [
+  {
+  "name": "首里城",
+  "place":2,
+  "latitude": 26.216953055555553,
+  "longitude":127.7194475,
+  "photoName": "syurizyo",
+  "siteURL": "http://oki-park.jp/shurijo/"
+  },
+  {
+  "name": "海洋博公園",
+  "place":0,
+  "latitude": 26.690834722222224,
+  "longitude": 127.87777916666666,
+  "photoName": "kaiyohakukoen",
+  "siteURL": "https://oki-park.jp/kaiyohaku/"
+  },
+  {
+  "name": "ひめゆり平和祈念資料館",
+  "place":2,
+  "latitude": 26.09639027777778,
+  "longitude": 127.69055694444445,
+  "photoName": "himeyuri",
+  "siteURL": "https://http://www.himeyuri.or.jp/JP/top.html"
+  },
+  {
+  "name": "古宇利島",
+  "place":0,
+  "latitude": 26.70611111111111,
+  "longitude": 128.01777777777778,
+  "photoName": "kouri",
+  "siteURL": "http://kourijima.info"
+  },
+  {
+  "name": "アメリカンビレッジ",
+  "place":1,
+  "latitude": 26.31646321,
+  "longitude": 127.7573025,
+  "photoName": "americanvillage",
+  "siteURL": "http://www.okinawa-americanvillage.com"
+  },
+  {
+  "name": "国際通り",
+  "place":2,
+  "latitude": 26.214853,
+  "longitude": 127.683739,
+  "photoName": "kokusaidori",
+  "siteURL": "http://www.naha-navi.or.jp/kokusaiDori.html"
+  },
+  {
+  "name": "ニライカナイ橋",
+  "place":2,
+  "latitude": 26.16746,
+  "longitude": 127.815186,
+  "photoName": "niraikanaibashi",
+  "siteURL": "http://www.tabinchu.net/area2_6/genre1_6/spot_105306/"
+  },
+  {
+  "name": "アウトレットモールあしびなー",
+  "place":2,
+  "latitude": 26.158267,
+  "longitude": 127.657821,
+  "photoName": "outletmallashibina",
+  "siteURL": "http://www.ashibinaa.com"
+  },
+  {
+  "name": "名護パイナップルパーク",
+  "place":0,
+  "latitude": 26.616545,
+  "longitude": 127.969585,
+  "photoName": "nagopainapplepark",
+  "siteURL": "http://www.nagopain.com"
+  },
+  {
+  "name": "万座毛",
+  "place":0,
+  "latitude": 26.504906,
+  "longitude": 127.850231,
+  "photoName": "manzamo",
+  "siteURL": "hhttp://www.okinawastory.jp/view/portal/0030000060/"
+  }
+  ]

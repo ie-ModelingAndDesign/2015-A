@@ -7,24 +7,31 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TopTabViewController: UITabBarController {
     
-    let locationView: LocationViewController = LocationViewController()
     let placeSelectView: PlaceSelectViewController = PlaceSelectViewController()
     let purposeSelectView: PurposeSelectViewController = PurposeSelectViewController()
     let ageSelectView: AgeSelectViewController = AgeSelectViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationView.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.Favorites, tag: 1)
-        placeSelectView.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.Favorites, tag: 2)
-        purposeSelectView.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.Favorites, tag: 3)
-        ageSelectView.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.Favorites, tag: 4)
-        let tabs: [UIViewController] = NSArray(objects: self.locationView, self.placeSelectView, self.purposeSelectView, self.ageSelectView) as! [UIViewController]
+        placeSelectView.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.Favorites, tag: 1)
+        purposeSelectView.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.Favorites, tag: 2)
+        ageSelectView.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.Favorites, tag: 3)
+        let tabs: [UIViewController] = NSArray(objects: self.placeSelectView, self.purposeSelectView, self.ageSelectView) as! [UIViewController]
         self.setViewControllers(tabs, animated: true)
-        self.selectedViewController! = locationView
+        self.selectedViewController! = placeSelectView
         self.automaticallyAdjustsScrollViewInsets = false
+        
+        if !NSFileManager.defaultManager().fileExistsAtPath(Realm.Configuration.defaultConfiguration.path!) {
+            let insData = ImportDatas()
+            print(insData.run())
+            
+        } else {
+            print("Not Copy!")
+        }
 
         // Do any additional setup after loading the view.
     }

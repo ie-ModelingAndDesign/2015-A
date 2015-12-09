@@ -8,52 +8,136 @@
 
 import UIKit
 
-class PhotoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-    var myCollectionView: UICollectionView!
+class PhotoViewController: UIViewController {
+    private var beforePoint = CGPointMake(0.0, 0.0)
+    private var currentScale:CGFloat = 1.0
+    let photo: UIImageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.blackColor()
+        let image: UIImage = UIImage(named: "smile.png")!
+        photo.image = image
+        photo.contentMode = UIViewContentMode.ScaleAspectFit
+        photo.userInteractionEnabled = true
+        photo.frame = CGRectMake(10, 64, self.view.bounds.width - 20, self.view.bounds.height - 104)
+        self.view.addSubview(photo)
         
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        layout.headerReferenceSize = CGSizeMake(10, 28)
-        layout.minimumInteritemSpacing = 0.0
-        layout.minimumLineSpacing = 0.0
+        let pinchGesture = UIPinchGestureRecognizer(target: self, action: "handleGesture:")
+        self.photo.addGestureRecognizer(pinchGesture)
         
-        myCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-        myCollectionView.registerClass(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
-        myCollectionView.delegate = self
-        myCollectionView.dataSource = self
-        myCollectionView.backgroundColor = UIColor.whiteColor()
+        let tapGesture = UITapGestureRecognizer(target: self, action: "handleGesture:")
+        self.photo.addGestureRecognizer(tapGesture)
         
-        self.view.addSubview(myCollectionView)
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: "handleGesture:")
+        self.photo.addGestureRecognizer(longPressGesture)
         
+        let panGesture = UIPanGestureRecognizer(target: self, action: "handleGesture:")
+        self.photo.addGestureRecognizer(panGesture)
 
         // Do any additional setup after loading the view.
+    }
+    
+    func handleGesture(gesture: UIGestureRecognizer){
+        if let tapGesture = gesture as? UITapGestureRecognizer{
+            tap(tapGesture)
+        }else if let pinchGesture = gesture as? UIPinchGestureRecognizer{
+            pinch(pinchGesture)
+        }else if let longPressGesture = gesture as? UILongPressGestureRecognizer{
+            longPress(longPressGesture)
+        }else if let panGesture = gesture as? UIPanGestureRecognizer{
+            pan(panGesture)
+        }
+    }
+    
+    private func pan(gesture:UIPanGestureRecognizer){
+        if self.currentScale != 1.0 {
+            var translation = gesture.translationInView(self.view)
+            
+            if abs(self.beforePoint.x) > 0.0 || abs(self.beforePoint.y) > 0.0{
+                translation = CGPointMake(self.beforePoint.x + translation.x, self.beforePoint.y + translation.y)
+            }
+            
+            switch gesture.state{
+            case .Changed:
+                let scaleTransform = CGAffineTransformMakeScale(self.currentScale, self.currentScale)
+                let translationTransform = CGAffineTransformMakeTranslation(translation.x, translation.y)
+                self.photo.transform = CGAffineTransformConcat(scaleTransform, translationTransform)
+            case .Ended , .Cancelled:
+                self.beforePoint = translation
+            default:
+                NSLog("no action")
+            }
+        }
+    }
+    
+    private func longPress(gesture:UILongPressGestureRecognizer){
+        if gesture.state == .Began{
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                self.currentScale = 1.0
+                self.beforePoint = CGPointMake(0.0, 0.0)
+                self.photo.transform = CGAffineTransformIdentity
+            })
+        }
+    }
+    
+    private func tap(gesture:UITapGestureRecognizer){
+        if self.currentScale == 1.0 {
+            let alertController: UIAlertController = UIAlertController(title: "行動選択", message: "お店の情報を見ますか？ルートを表示しますか？", preferredStyle: .Alert)
+            let infoAction = UIAlertAction(title: "情報を見る", style: .Default, handler: { action in
+                // TODO: InformationViewControllerとかに変える
+                let infomationView: InfomationViewController = InfomationViewController()
+                self.navigationController?.pushViewController(infomationView, animated: true)
+            })
+            let routeAction = UIAlertAction(title: "ルートを表示する", style: .Default, handler: { action in
+                // TODO: RouteViewControllerとかに変える
+                let routeView: RouteViewController = RouteViewController()
+                self.navigationController?.pushViewController(routeView, animated: true)
+            })
+            let cancelAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: { action in
+                print("Canceled!")
+            })
+            alertController.addAction(infoAction)
+            alertController.addAction(routeAction)
+            alertController.addAction(cancelAction)
+            
+            presentViewController(alertController, animated: true, completion: nil)
+            
+        } else {
+            UIView.animateWithDuration(0.2, animations: { () -> Void in
+                self.currentScale = 1.0
+                self.beforePoint = CGPointMake(0.0, 0.0)
+                self.photo.transform = CGAffineTransformIdentity
+            })
+        }
+    }
+    
+    private func pinch(gesture:UIPinchGestureRecognizer){
+        var scale = gesture.scale
+        if self.currentScale > 1.0{
+            scale = self.currentScale + (scale - 1.0)
+        }
+        switch gesture.state{
+        case .Changed:
+            let scaleTransform = CGAffineTransformMakeScale(scale, scale)
+            let transitionTransform = CGAffineTransformMakeTranslation(self.beforePoint.x, self.beforePoint.y)
+            self.photo.transform = CGAffineTransformConcat(scaleTransform, transitionTransform)
+        case .Ended , .Cancelled:
+            if scale <= 1.0{
+                self.currentScale = 1.0
+                self.photo.transform = CGAffineTransformIdentity
+            }else{
+                self.currentScale = scale
+            }
+        default:
+            NSLog("not action")
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath)
-    }
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell: PhotoCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath) as! PhotoCollectionViewCell
-        let image: UIImage = UIImage(named: "smile.png")!
-        let photo: UIImageView = UIImageView(image: image)
-        cell.photo = photo
-        return cell
-    }
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    
     
 
     /*

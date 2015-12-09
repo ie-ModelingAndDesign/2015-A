@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'OkinawaPhotoCollection' do
   pod 'RealmSwift'
+  pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 
 end
 

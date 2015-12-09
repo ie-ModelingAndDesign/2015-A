@@ -1,0 +1,82 @@
+ [
+  {
+  "name": "ビタミン とんこつ がりゅうや （Vitamin）",
+  "place": 1,
+  "latitude": 26.253801,
+  "longitude": 127.763347,
+  "photoName": "garyu",
+  "siteURL": "http://tabelog.com/okinawa/A4703/A470404/47010820/"
+  },
+  {
+  "name": "ちらー小(ぐゎー)",
+  "place": 2,
+  "latitude": 26.210078,
+  "longitude": 127.723468,
+  "photoName": "chiragwa",
+  "siteURL": "http://tabelog.com/okinawa/A4704/A470401/47000110/"
+  },
+  {
+  "name": "美濃作",
+  "place": 2,
+  "latitude": 26.214793,
+  "longitude": 127.681710,
+  "photoName": "minosaku",
+  "siteURL": "http://tabelog.com/okinawa/A4701/A470101/47000009/"
+  },
+  {
+  "name": "タコスの店 なっちゃん",
+  "place": 1,
+  "latitude": 26.258201,
+  "longitude": 127.768626,
+  "photoName": "nattyan",
+  "siteURL": "http://tabelog.com/okinawa/A4703/A470404/47016244/"
+  },
+  {
+  "name": "運玉食堂",
+  "place": 1,
+  "latitude": 26.217689,
+  "longitude": 127.740615,
+  "photoName": "untama",
+  "siteURL": "http://tabelog.com/okinawa/A4704/A470405/47005906/"
+  },
+  {
+  "name": "麺屋 武虎 宜野湾店",
+  "place": 1,
+  "latitude": 26.256977,
+  "longitude": 127.751132,
+  "photoName": "taketora_ginowan",
+  "siteURL": "http://tabelog.com/okinawa/A4703/A470404/47015750/"
+  },
+  {
+  "name": "ポケットマーニー 宜野湾店",
+  "place": 1,
+  "latitude": 26.262556,
+  "longitude": 127.751864,
+  "photoName": "pocket_ginowan",
+  "siteURL": "http://tabelog.com/okinawa/A4703/A470404/47007777/"
+  },
+  {
+  "name": "A&W 牧港店",
+  "place": 1,
+  "latitude": 26.266634,
+  "longitude": 127.728390,
+  "photoName": "AandW_makiminato",
+  "siteURL": "http://tabelog.com/okinawa/A4703/A470404/47000030/"
+  },
+  {
+  "name": "沖縄そば専門店 与那原家",
+  "place": 2,
+  "latitude": 26.208703,
+  "longitude": 127.758143,
+  "photoName": "yonabaruya",
+  "siteURL": "http://tabelog.com/okinawa/A4704/A470405/47000281/"
+  },
+  {
+  "name": "最強食堂 宜野湾店",
+  "place": 2,
+  "latitude": 26.270019,
+  "longitude": 127.768783,
+  "photoName": "saikyo_ginowan",
+  "siteURL": "http://tabelog.com/okinawa/A4703/A470404/47005652/"
+  },
+  ]

@@ -8,22 +8,33 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
+    var showsID: Int?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 //        let firstView: CoreLocationController = CoreLocationController()
 //        let firstView: PhotoViewController = PhotoViewController()
+        //TODO: データ作ったらデフォルトで入れる用
+//        if !NSFileManager.defaultManager().fileExistsAtPath(Realm.Configuration.defaultConfiguration.path!) {
+//            try! NSFileManager.defaultManager().copyItemAtPath(NSBundle.mainBundle().pathForResource("data", ofType: "realm")!, toPath: Realm.Configuration.defaultConfiguration.path!)
+//            print("Copied")
+//        } else {
+//            print("Not Copy!")
+//        }
         let firstView: TopTabViewController = TopTabViewController()
         let myNavigationController: UINavigationController = UINavigationController(rootViewController: firstView)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.rootViewController = myNavigationController
         self.window?.makeKeyAndVisible()
+        
+        
         
         return true
     }

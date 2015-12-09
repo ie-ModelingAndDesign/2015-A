@@ -86,8 +86,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-OkinawaPhotoCollection/Realm.framework"
   install_framework "Pods-OkinawaPhotoCollection/RealmSwift.framework"
+  install_framework "Pods-OkinawaPhotoCollection/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-OkinawaPhotoCollection/Realm.framework"
   install_framework "Pods-OkinawaPhotoCollection/RealmSwift.framework"
+  install_framework "Pods-OkinawaPhotoCollection/SwiftyJSON.framework"
 fi
