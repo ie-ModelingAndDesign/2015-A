@@ -19,6 +19,7 @@
 		6126EA7D1BECD0570052643C /* OkinawaPhotoCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6126EA7C1BECD0570052643C /* OkinawaPhotoCollectionUITests.swift */; };
 		AA44EC4B1C17E70C000C8CAA /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44EC4A1C17E70C000C8CAA /* PhotoViewController.swift */; };
 		AA44EC4D1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44EC4C1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift */; };
+		AA44EC4F1C17EA55000C8CAA /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = AA44EC4E1C17EA55000C8CAA /* smile.png */; };
 		B7FC49909AA34B1A579B4ED8 /* Pods_OkinawaPhotoCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6BBEC5E44AB02C7D75A9F7 /* Pods_OkinawaPhotoCollection.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		9865887ABE9A67E62F90CB44 /* Pods-OkinawaPhotoCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OkinawaPhotoCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OkinawaPhotoCollection/Pods-OkinawaPhotoCollection.debug.xcconfig"; sourceTree = "<group>"; };
 		AA44EC4A1C17E70C000C8CAA /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		AA44EC4C1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		AA44EC4E1C17EA55000C8CAA /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				236B90521BFC5CBE0009F6AC /* CoreLocationController.swift */,
 				AA44EC4A1C17E70C000C8CAA /* PhotoViewController.swift */,
 				AA44EC4C1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift */,
+				AA44EC4E1C17EA55000C8CAA /* smile.png */,
 				6126EA601BECD0570052643C /* Main.storyboard */,
 				6126EA631BECD0570052643C /* Assets.xcassets */,
 				6126EA651BECD0570052643C /* LaunchScreen.storyboard */,
@@ -273,6 +276,7 @@
 			files = (
 				6126EA671BECD0570052643C /* LaunchScreen.storyboard in Resources */,
 				6126EA641BECD0570052643C /* Assets.xcassets in Resources */,
+				AA44EC4F1C17EA55000C8CAA /* smile.png in Resources */,
 				6126EA621BECD0570052643C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
