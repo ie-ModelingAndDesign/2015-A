@@ -2,7 +2,7 @@ import UIKit
 import CoreLocation
 
 // CLLocationManagerDelegateを継承しなければならない
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class CoreLocationController: UIViewController, CLLocationManagerDelegate {
     
     // 現在地の位置情報の取得にはCLLocationManagerを使用
     let lm = CLLocationManager()
@@ -17,7 +17,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         btn.backgroundColor = UIColor.blueColor()
         btn.titleLabel?.text = "Stop"
         btn.titleLabel?.textColor = UIColor.whiteColor()
-        btn.addTarget(self, action:"stop", forControlEvents: .TouchDown)
+        btn.addTarget(self, action:"stop:", forControlEvents: .TouchUpInside)
         self.view.addSubview(btn)
         // CLLocationManagerをDelegateに指定
         lm.delegate = self
@@ -25,15 +25,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // 位置情報取得の許可を求めるメッセージの表示．必須．
         lm.requestAlwaysAuthorization()
         // 位置情報の精度を指定．任意，
-        // lm.desiredAccuracy = kCLLocationAccuracyBest
+         lm.desiredAccuracy = kCLLocationAccuracyBest
         // 位置情報取得間隔を指定．指定した値（メートル）移動したら位置情報を更新する．任意．
-        // lm.distanceFilter = 1000
+         lm.distanceFilter = 1000
         
         // GPSの使用を開始する
         
     }
     
-    func stop() {
+    func stop(sender: UIButton) {
+        print("pushed")
         if i % 2 == 0 {
             lm.startUpdatingLocation()
         } else {
