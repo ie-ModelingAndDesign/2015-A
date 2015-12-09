@@ -10,11 +10,12 @@ import RealmSwift
 
 class Photo: Object {
     dynamic var id: Int = 0
-    dynamic var latitude: Float = 0.0
-    dynamic var longitude: Float = 0.0
+    dynamic var latitude: Double = 0.0
+    dynamic var longitude: Double = 0.0
     dynamic var photoName: String = ""
     dynamic var url: String = ""
     dynamic var place: Int = 0
+    dynamic var name: String = ""
     
     override class func primaryKey() -> String {
         return "id"

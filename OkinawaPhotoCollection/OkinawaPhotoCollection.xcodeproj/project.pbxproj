@@ -53,6 +53,7 @@
 		AA8CCB371C1883EB007148AB /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CCB361C1883EB007148AB /* RouteViewController.swift */; };
 		AA8CCB391C188455007148AB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8CCB381C188455007148AB /* MapKit.framework */; };
 		AA8CCB3B1C1888D0007148AB /* kouri.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA8CCB3A1C1888D0007148AB /* kouri.jpg */; };
+		AAAC27721C18AA6E007CF8C0 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC27711C18AA6E007CF8C0 /* CGPoint.swift */; };
 		B7FC49909AA34B1A579B4ED8 /* Pods_OkinawaPhotoCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6BBEC5E44AB02C7D75A9F7 /* Pods_OkinawaPhotoCollection.framework */; };
 /* End PBXBuildFile section */
 
@@ -129,6 +130,7 @@
 		AA8CCB361C1883EB007148AB /* RouteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
 		AA8CCB381C188455007148AB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AA8CCB3A1C1888D0007148AB /* kouri.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kouri.jpg; sourceTree = "<group>"; };
+		AAAC27711C18AA6E007CF8C0 /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				AA44EC501C17ED50000C8CAA /* RealmObjects.swift */,
 				AA8CCB031C187E69007148AB /* InportDatas.swift */,
 				AA8CCAFD1C181CCE007148AB /* json.swift */,
+				AAAC27711C18AA6E007CF8C0 /* CGPoint.swift */,
 				AA8CCB311C187F56007148AB /* InitDatas */,
 				6126EA601BECD0570052643C /* Main.storyboard */,
 				6126EA631BECD0570052643C /* Assets.xcassets */,
@@ -508,6 +511,7 @@
 				236B90531BFC5CBE0009F6AC /* CoreLocationController.swift in Sources */,
 				AA8CCB371C1883EB007148AB /* RouteViewController.swift in Sources */,
 				6126EA581BECD0570052643C /* AppDelegate.swift in Sources */,
+				AAAC27721C18AA6E007CF8C0 /* CGPoint.swift in Sources */,
 				6126EA5B1BECD0570052643C /* OkinawaPhotoCollection.xcdatamodeld in Sources */,
 				6126EA5D1BECD0570052643C /* MasterViewController.swift in Sources */,
 				AA44EC4D1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift in Sources */,

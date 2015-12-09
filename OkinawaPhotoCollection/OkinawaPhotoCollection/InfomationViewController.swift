@@ -19,7 +19,6 @@ class InfomationViewController: UIViewController, UIWebViewDelegate {
         self.webView.frame = self.view.bounds
         self.view.addSubview(self.webView)
         
-        //TODO: 今はとりあえず我流屋としている、これはDBからちゃんと取ってくるように!
         let realm = try! Realm()
         let photo = realm.objects(Photo).filter("id == \(self.delegate.pictureID)").first!
         let url: NSURL = NSURL(string: photo.url)!

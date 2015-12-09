@@ -8,15 +8,44 @@
 
 import UIKit
 import RealmSwift
+import CoreLocation
 
-class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate {
     var myCollectionView: UICollectionView!
     var photosArr: [Photo] = []
     
     let delegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
+    // 現在地の位置情報の取得にはCLLocationManagerを使用
+    let lm = CLLocationManager()
+    // 取得した緯度を保持するインスタンス
+    let latitude = CLLocationDegrees()
+    // 取得した経度を保持するインスタンス
+    let longitude = CLLocationDegrees()
+    
+    /* 位置情報取得成功時に実行される関数 */
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let btn = UIButton(frame: CGRectMake(self.view.bounds.size.width / 2 - 100, self.view.bounds.size.height / 2 - 20, 200, 40))
+//        btn.backgroundColor = UIColor.blueColor()
+//        btn.titleLabel?.text = "Stop"
+//        btn.titleLabel?.textColor = UIColor.whiteColor()
+//        btn.addTarget(self, action:"stop", forControlEvents: .TouchDown)
+//        self.view.addSubview(btn)
+        // CLLocationManagerをDelegateに指定
+        lm.delegate = self
+        
+        // 位置情報取得の許可を求めるメッセージの表示．必須．
+        lm.requestAlwaysAuthorization()
+        // 位置情報の精度を指定．任意，
+        // lm.desiredAccuracy = kCLLocationAccuracyBest
+        // 位置情報取得間隔を指定．指定した値（メートル）移動したら位置情報を更新する．任意．
+        // lm.distanceFilter = 1000
+        lm.startUpdatingLocation()
+        
+        // GPSの使用を開始する
         
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
@@ -42,7 +71,7 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate,
     
     // セルが選択されたときに呼ばれる
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        print(indexPath)
+//        print(indexPath)
         self.delegate.pictureID = photosArr[indexPath.row].id
         let photoView: PhotoViewController = PhotoViewController()
         self.navigationController?.pushViewController(photoView, animated: true)
@@ -55,7 +84,7 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate,
         // let image: UIImage = UIImage(named: "smile.png")!
         // TODO: 今はプロジェクトから参照しているので、できるだけDBから掴んで持ってくること！
         let image: UIImage = UIImage(named: photosArr[indexPath.row].photoName)!
-        print(photosArr[indexPath.row].photoName)
+//        print(photosArr[indexPath.row].photoName)
         cell.setImage(image)
 
         return cell
@@ -71,10 +100,31 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate,
         let photos = realm.objects(Photo)
         // 押されたボタンが現在地で探すのとき
         if self.delegate.showsID == 0 {
+            var diffArr: [CGFloat] = []
+            let myLocation: CGPoint = CGPoint(x: 90, y: self.longitude)
             for photo in photos {
+                let photoLocation: CGPoint = CGPoint(x: photo.latitude, y: photo.longitude)
+                let distance = (photoLocation - myLocation).length
+                diffArr.append(distance)
                 photosArr.append(photo)
+                print(photo.name)
             }
-            
+            print("######")
+            for i in 0..<diffArr.count {
+                for j in 1..<diffArr.count {
+                    if diffArr[i] > diffArr[j] {
+                        let tmp: CGFloat = diffArr[i]
+                        diffArr[i] = diffArr[j]
+                        diffArr[j] = tmp
+                        let tmpPhoto: Photo = photosArr[i]
+                        photosArr[i] = photosArr[j]
+                        photosArr[j] = tmpPhoto
+                    }
+                }
+            }
+            for p in photosArr {
+                print(p.name)
+            }
         }
         // 押されたボタンが場所で探すのとき
         else if self.delegate.showsID < 4 {
@@ -82,6 +132,24 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate,
                 photosArr.append(photo)
             }
         }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation){
+        // 取得した緯度がnewLocation.coordinate.longitudeに格納されている
+        let lat = newLocation.coordinate.latitude
+        // 取得した経度がnewLocation.coordinate.longitudeに格納されている
+        let long = newLocation.coordinate.longitude
+        // 取得した緯度・経度をLogに表示
+        print("latiitude: \(lat) , longitude: \(long)")
+        
+        // GPSの使用を停止する．停止しない限りGPSは実行され，指定間隔で更新され続ける．
+         lm.stopUpdatingLocation()
+    }
+    
+    /* 位置情報取得失敗時に実行される関数 */
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        // この例ではLogにErrorと表示するだけ．
+        print("Error")
     }
     
     

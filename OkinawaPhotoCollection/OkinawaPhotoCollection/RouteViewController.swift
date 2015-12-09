@@ -8,18 +8,23 @@
 
 import UIKit
 import MapKit
+import RealmSwift
 
 class RouteViewController: UIViewController, MKMapViewDelegate {
+    let delegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let realm = try! Realm()
+        let photo = realm.objects(Photo).filter("id == \(self.delegate.pictureID)").first!
         
         // MapViewを生成.
         let myMapView: MKMapView = MKMapView()
         myMapView.frame = self.view.frame
         
         // 経度、緯度.
-        let myLatitude: CLLocationDegrees = 26.253260
-        let myLongitude: CLLocationDegrees = 127.766390
+        let myLatitude: CLLocationDegrees = CLLocationDegrees(photo.latitude)
+        let myLongitude: CLLocationDegrees = CLLocationDegrees(photo.longitude)
         
         // 中心点.
         let center: CLLocationCoordinate2D = CLLocationCoordinate2DMake(myLatitude, myLongitude)
@@ -43,11 +48,20 @@ class RouteViewController: UIViewController, MKMapViewDelegate {
         // viewにMapViewを追加.
         self.view.addSubview(myMapView)
         
+        var place: String = ""
+        if photo.place == 0 {
+            place = "北部"
+        } else if photo.place == 1 {
+            place = "中部"
+        } else if photo.place == 2 {
+            place = "南部"
+        }
+        
         // ピンを生成.
         let myPin: MKPointAnnotation = MKPointAnnotation()
         myPin.coordinate = center         // 座標を設定.
-        myPin.title = "琉球大学"           // タイトルを設定.
-        myPin.subtitle = "工学部"         // サブタイトルを設定.
+        myPin.title = photo.name           // タイトルを設定.
+        myPin.subtitle = place         // サブタイトルを設定.
         myMapView.addAnnotation(myPin)   // MapViewにピンを追加.
     }
 
