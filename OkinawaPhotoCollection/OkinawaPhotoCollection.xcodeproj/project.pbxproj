@@ -20,6 +20,12 @@
 		AA44EC4B1C17E70C000C8CAA /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44EC4A1C17E70C000C8CAA /* PhotoViewController.swift */; };
 		AA44EC4D1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44EC4C1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift */; };
 		AA44EC4F1C17EA55000C8CAA /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = AA44EC4E1C17EA55000C8CAA /* smile.png */; };
+		AA44EC511C17ED50000C8CAA /* RealmObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44EC501C17ED50000C8CAA /* RealmObjects.swift */; };
+		AA44EC531C17EFC0000C8CAA /* TopTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44EC521C17EFC0000C8CAA /* TopTabViewController.swift */; };
+		AA44EC571C17F062000C8CAA /* PlaceSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44EC561C17F062000C8CAA /* PlaceSelectViewController.swift */; };
+		AA44EC591C17F080000C8CAA /* PurposeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44EC581C17F080000C8CAA /* PurposeSelectViewController.swift */; };
+		AA44EC5B1C17F08F000C8CAA /* AgeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44EC5A1C17F08F000C8CAA /* AgeSelectViewController.swift */; };
+		AA44EC5D1C17F0D1000C8CAA /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44EC5C1C17F0D1000C8CAA /* LocationViewController.swift */; };
 		B7FC49909AA34B1A579B4ED8 /* Pods_OkinawaPhotoCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6BBEC5E44AB02C7D75A9F7 /* Pods_OkinawaPhotoCollection.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +69,12 @@
 		AA44EC4A1C17E70C000C8CAA /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		AA44EC4C1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA44EC4E1C17EA55000C8CAA /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
+		AA44EC501C17ED50000C8CAA /* RealmObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObjects.swift; sourceTree = "<group>"; };
+		AA44EC521C17EFC0000C8CAA /* TopTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTabViewController.swift; sourceTree = "<group>"; };
+		AA44EC561C17F062000C8CAA /* PlaceSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceSelectViewController.swift; sourceTree = "<group>"; };
+		AA44EC581C17F080000C8CAA /* PurposeSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurposeSelectViewController.swift; sourceTree = "<group>"; };
+		AA44EC5A1C17F08F000C8CAA /* AgeSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeSelectViewController.swift; sourceTree = "<group>"; };
+		AA44EC5C1C17F0D1000C8CAA /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +142,12 @@
 				236B90521BFC5CBE0009F6AC /* CoreLocationController.swift */,
 				AA44EC4A1C17E70C000C8CAA /* PhotoViewController.swift */,
 				AA44EC4C1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift */,
+				AA44EC521C17EFC0000C8CAA /* TopTabViewController.swift */,
+				AA44EC5C1C17F0D1000C8CAA /* LocationViewController.swift */,
+				AA44EC581C17F080000C8CAA /* PurposeSelectViewController.swift */,
+				AA44EC561C17F062000C8CAA /* PlaceSelectViewController.swift */,
+				AA44EC5A1C17F08F000C8CAA /* AgeSelectViewController.swift */,
+				AA44EC501C17ED50000C8CAA /* RealmObjects.swift */,
 				AA44EC4E1C17EA55000C8CAA /* smile.png */,
 				6126EA601BECD0570052643C /* Main.storyboard */,
 				6126EA631BECD0570052643C /* Assets.xcassets */,
@@ -350,11 +368,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA44EC511C17ED50000C8CAA /* RealmObjects.swift in Sources */,
 				236B90531BFC5CBE0009F6AC /* CoreLocationController.swift in Sources */,
 				6126EA581BECD0570052643C /* AppDelegate.swift in Sources */,
 				6126EA5B1BECD0570052643C /* OkinawaPhotoCollection.xcdatamodeld in Sources */,
 				6126EA5D1BECD0570052643C /* MasterViewController.swift in Sources */,
 				AA44EC4D1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift in Sources */,
+				AA44EC571C17F062000C8CAA /* PlaceSelectViewController.swift in Sources */,
+				AA44EC5D1C17F0D1000C8CAA /* LocationViewController.swift in Sources */,
+				AA44EC591C17F080000C8CAA /* PurposeSelectViewController.swift in Sources */,
+				AA44EC5B1C17F08F000C8CAA /* AgeSelectViewController.swift in Sources */,
+				AA44EC531C17EFC0000C8CAA /* TopTabViewController.swift in Sources */,
 				6126EA5F1BECD0570052643C /* DetailViewController.swift in Sources */,
 				AA44EC4B1C17E70C000C8CAA /* PhotoViewController.swift in Sources */,
 			);
