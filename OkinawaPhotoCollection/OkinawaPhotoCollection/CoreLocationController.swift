@@ -2,7 +2,7 @@ import UIKit
 import CoreLocation
 
 // CLLocationManagerDelegateを継承しなければならない
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class CoreLocationController: UIViewController, CLLocationManagerDelegate {
     
     // 現在地の位置情報の取得にはCLLocationManagerを使用
     let lm = CLLocationManager()

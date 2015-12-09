@@ -17,6 +17,8 @@
 		6126EA671BECD0570052643C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6126EA651BECD0570052643C /* LaunchScreen.storyboard */; };
 		6126EA721BECD0570052643C /* OkinawaPhotoCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6126EA711BECD0570052643C /* OkinawaPhotoCollectionTests.swift */; };
 		6126EA7D1BECD0570052643C /* OkinawaPhotoCollectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6126EA7C1BECD0570052643C /* OkinawaPhotoCollectionUITests.swift */; };
+		AA44EC4B1C17E70C000C8CAA /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44EC4A1C17E70C000C8CAA /* PhotoViewController.swift */; };
+		AA44EC4D1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44EC4C1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift */; };
 		B7FC49909AA34B1A579B4ED8 /* Pods_OkinawaPhotoCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6BBEC5E44AB02C7D75A9F7 /* Pods_OkinawaPhotoCollection.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +59,8 @@
 		6126EA7E1BECD0570052643C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D6BBEC5E44AB02C7D75A9F7 /* Pods_OkinawaPhotoCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OkinawaPhotoCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9865887ABE9A67E62F90CB44 /* Pods-OkinawaPhotoCollection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OkinawaPhotoCollection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OkinawaPhotoCollection/Pods-OkinawaPhotoCollection.debug.xcconfig"; sourceTree = "<group>"; };
+		AA44EC4A1C17E70C000C8CAA /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		AA44EC4C1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +126,8 @@
 				6126EA5C1BECD0570052643C /* MasterViewController.swift */,
 				6126EA5E1BECD0570052643C /* DetailViewController.swift */,
 				236B90521BFC5CBE0009F6AC /* CoreLocationController.swift */,
+				AA44EC4A1C17E70C000C8CAA /* PhotoViewController.swift */,
+				AA44EC4C1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift */,
 				6126EA601BECD0570052643C /* Main.storyboard */,
 				6126EA631BECD0570052643C /* Assets.xcassets */,
 				6126EA651BECD0570052643C /* LaunchScreen.storyboard */,
@@ -344,7 +350,9 @@
 				6126EA581BECD0570052643C /* AppDelegate.swift in Sources */,
 				6126EA5B1BECD0570052643C /* OkinawaPhotoCollection.xcdatamodeld in Sources */,
 				6126EA5D1BECD0570052643C /* MasterViewController.swift in Sources */,
+				AA44EC4D1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift in Sources */,
 				6126EA5F1BECD0570052643C /* DetailViewController.swift in Sources */,
+				AA44EC4B1C17E70C000C8CAA /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +494,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OkinawaPhotoCollection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ie2015-A.OkinawaPhotoCollection";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -498,6 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OkinawaPhotoCollection/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ie2015-A.OkinawaPhotoCollection";
 				PRODUCT_NAME = "$(TARGET_NAME)";
