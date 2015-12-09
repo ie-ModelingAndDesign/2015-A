@@ -48,12 +48,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     /* 位置情報取得成功時に実行される関数 */
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation){
+        let Photolocationlatiitude = 37.33240905
+        let Photolocationlongitude = -122.03051211
+        
         // 取得した緯度がnewLocation.coordinate.longitudeに格納されている
         let lat = newLocation.coordinate.latitude
         // 取得した経度がnewLocation.coordinate.longitudeに格納されている
         let long = newLocation.coordinate.longitude
         // 取得した緯度・経度をLogに表示
-        print("latiitude: \(lat) , longitude: \(long)")
+        print("Photolocationlatiitude: \(Photolocationlatiitude), Photolocationlongitude: \(Photolocationlongitude),\n  latiitude: \(lat) , longitude: \(long)")
         
         // GPSの使用を停止する．停止しない限りGPSは実行され，指定間隔で更新され続ける．
         // lm.stopUpdatingLocation()
@@ -62,7 +65,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     /* 位置情報取得失敗時に実行される関数 */
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         // この例ではLogにErrorと表示するだけ．
-        print("Error")
+        print(error)
     }
     
 }
