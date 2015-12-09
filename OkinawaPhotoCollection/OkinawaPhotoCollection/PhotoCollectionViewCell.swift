@@ -20,17 +20,23 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         
         self.backgroundColor = UIColor.whiteColor()
         
-        let image: UIImage = UIImage(named: "smile.png")!
+        let image: UIImage?
+        image = UIImage(named: "smile.png")!
         
         photo = UIImageView(image: image)
         photo!.frame = CGRectMake(0, 0, frame.width, frame.height)
         
-        self.contentView.addSubview(photo!)
+//        self.contentView.addSubview(photo!)
+        self.addSubview(photo!)
     }
     
     override func drawRect(rect: CGRect) {
         self.layer.borderColor = UIColor.blackColor().CGColor
         self.layer.borderWidth = 1.0
+    }
+    
+    func setImage(image: UIImage) {
+        photo!.image = image
     }
     
 }

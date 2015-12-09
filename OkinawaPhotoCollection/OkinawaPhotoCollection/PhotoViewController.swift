@@ -1,39 +1,43 @@
 //
 //  PhotoViewController.swift
-//  OkinawaPhotoCollection
+//  OkinawaphotoViewCollection
 //
 //  Created by aokabin on 2015/12/09.
 //  Copyright © 2015年 TubeRiding. All rights reserved.
 //
 
 import UIKit
+import RealmSwift
 
 class PhotoViewController: UIViewController {
     private var beforePoint = CGPointMake(0.0, 0.0)
     private var currentScale:CGFloat = 1.0
-    let photo: UIImageView = UIImageView()
+    let photoView: UIImageView = UIImageView()
+    let delegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.blackColor()
-        let image: UIImage = UIImage(named: "smile.png")!
-        photo.image = image
-        photo.contentMode = UIViewContentMode.ScaleAspectFit
-        photo.userInteractionEnabled = true
-        photo.frame = CGRectMake(10, 64, self.view.bounds.width - 20, self.view.bounds.height - 104)
-        self.view.addSubview(photo)
+        let realm = try! Realm()
+        let photo = realm.objects(Photo).filter("id == \(self.delegate.pictureID)").first
+        let image: UIImage = UIImage(named: photo!.photoName)!
+        photoView.image = image
+        photoView.contentMode = UIViewContentMode.ScaleAspectFit
+        photoView.userInteractionEnabled = true
+        photoView.frame = CGRectMake(10, 64, self.view.bounds.width - 20, self.view.bounds.height - 104)
+        self.view.addSubview(photoView)
         
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: "handleGesture:")
-        self.photo.addGestureRecognizer(pinchGesture)
+        self.photoView.addGestureRecognizer(pinchGesture)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: "handleGesture:")
-        self.photo.addGestureRecognizer(tapGesture)
+        self.photoView.addGestureRecognizer(tapGesture)
         
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: "handleGesture:")
-        self.photo.addGestureRecognizer(longPressGesture)
+        self.photoView.addGestureRecognizer(longPressGesture)
         
         let panGesture = UIPanGestureRecognizer(target: self, action: "handleGesture:")
-        self.photo.addGestureRecognizer(panGesture)
+        self.photoView.addGestureRecognizer(panGesture)
 
         // Do any additional setup after loading the view.
     }
@@ -62,7 +66,7 @@ class PhotoViewController: UIViewController {
             case .Changed:
                 let scaleTransform = CGAffineTransformMakeScale(self.currentScale, self.currentScale)
                 let translationTransform = CGAffineTransformMakeTranslation(translation.x, translation.y)
-                self.photo.transform = CGAffineTransformConcat(scaleTransform, translationTransform)
+                self.photoView.transform = CGAffineTransformConcat(scaleTransform, translationTransform)
             case .Ended , .Cancelled:
                 self.beforePoint = translation
             default:
@@ -76,7 +80,7 @@ class PhotoViewController: UIViewController {
             UIView.animateWithDuration(0.2, animations: { () -> Void in
                 self.currentScale = 1.0
                 self.beforePoint = CGPointMake(0.0, 0.0)
-                self.photo.transform = CGAffineTransformIdentity
+                self.photoView.transform = CGAffineTransformIdentity
             })
         }
     }
@@ -107,7 +111,7 @@ class PhotoViewController: UIViewController {
             UIView.animateWithDuration(0.2, animations: { () -> Void in
                 self.currentScale = 1.0
                 self.beforePoint = CGPointMake(0.0, 0.0)
-                self.photo.transform = CGAffineTransformIdentity
+                self.photoView.transform = CGAffineTransformIdentity
             })
         }
     }
@@ -121,11 +125,11 @@ class PhotoViewController: UIViewController {
         case .Changed:
             let scaleTransform = CGAffineTransformMakeScale(scale, scale)
             let transitionTransform = CGAffineTransformMakeTranslation(self.beforePoint.x, self.beforePoint.y)
-            self.photo.transform = CGAffineTransformConcat(scaleTransform, transitionTransform)
+            self.photoView.transform = CGAffineTransformConcat(scaleTransform, transitionTransform)
         case .Ended , .Cancelled:
             if scale <= 1.0{
                 self.currentScale = 1.0
-                self.photo.transform = CGAffineTransformIdentity
+                self.photoView.transform = CGAffineTransformIdentity
             }else{
                 self.currentScale = scale
             }

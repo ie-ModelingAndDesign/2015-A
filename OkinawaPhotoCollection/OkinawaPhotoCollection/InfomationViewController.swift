@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class InfomationViewController: UIViewController, UIWebViewDelegate {
     let webView: UIWebView = UIWebView()
+    let delegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +20,9 @@ class InfomationViewController: UIViewController, UIWebViewDelegate {
         self.view.addSubview(self.webView)
         
         //TODO: 今はとりあえず我流屋としている、これはDBからちゃんと取ってくるように!
-        let url: NSURL = NSURL(string: "http://tabelog.com/okinawa/A4703/A470404/47010820/")!
+        let realm = try! Realm()
+        let photo = realm.objects(Photo).filter("id == \(self.delegate.pictureID)").first!
+        let url: NSURL = NSURL(string: photo.url)!
         let urlRequest: NSURLRequest = NSURLRequest(URL: url)
         self.webView.loadRequest(urlRequest)
         
