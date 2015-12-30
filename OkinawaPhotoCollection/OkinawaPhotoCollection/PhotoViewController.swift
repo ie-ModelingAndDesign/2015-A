@@ -13,6 +13,10 @@ class PhotoViewController: UIViewController {
     private var beforePoint = CGPointMake(0.0, 0.0)
     private var currentScale:CGFloat = 1.0
     let photoView: UIImageView = UIImageView()
+    
+    private var myButton: UIButton!
+    
+    
     let delegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     override func viewDidLoad() {
@@ -26,6 +30,45 @@ class PhotoViewController: UIViewController {
         photoView.userInteractionEnabled = true
         photoView.frame = CGRectMake(10, 64, self.view.bounds.width - 20, self.view.bounds.height - 104)
         self.view.addSubview(photoView)
+        
+        
+        // Buttonを生成する.
+        myButton = UIButton()
+        
+        // サイズを設定する.
+        myButton.frame = CGRectMake(0,0,200,40)
+        
+        // 背景色を設定する.
+        myButton.backgroundColor = UIColor.redColor()
+        
+        // 枠を丸くする.
+        myButton.layer.masksToBounds = true
+        
+        // タイトルを設定する(通常時).
+        myButton.setTitle("コメントを投稿する", forState: UIControlState.Normal)
+        myButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        
+        // タイトルを設定する(ボタンがハイライトされた時).
+        myButton.setTitle("コメントを投稿する", forState: UIControlState.Highlighted)
+        myButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Highlighted)
+        
+        // コーナーの半径を設定する.
+        myButton.layer.cornerRadius = 20.0
+        
+        // ボタンの位置を指定する.
+        myButton.layer.position = CGPoint(x: self.view.frame.width/2, y:self.view.frame.height - 45)
+        
+        // タグを設定する.
+        myButton.tag = 1
+        
+        // イベントを追加する.
+        myButton.addTarget(self, action: "onClickMyButton:", forControlEvents: .TouchUpInside)
+        
+        // ボタンをViewに追加する.
+        self.view.addSubview(myButton)
+        
+        
+        
         
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: "handleGesture:")
         self.photoView.addGestureRecognizer(pinchGesture)
@@ -153,5 +196,17 @@ class PhotoViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    /*
+    ボタンのアクション時に設定したメソッド.
+    */
+    internal func onClickMyButton(sender: UIButton){
+        print("onClickMyButton:")
+        print("sender.currentTitile: \(sender.currentTitle)")
+        print("sender.tag:\(sender.tag)")
+        
+    }
+    
 
 }
