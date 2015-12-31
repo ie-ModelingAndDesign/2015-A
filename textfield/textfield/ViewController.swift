@@ -15,8 +15,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
     let sc = UIScrollView();
     var txtActiveField = UITextField()
     
-
-    var myLabel: UILabel = UILabel(frame: CGRectMake(0,0,200,50))
+    let myTextView: UITextView = UITextView(frame: CGRectMake(10, 50, 400, 500))
     
     
      var myButton: UIButton!
@@ -39,29 +38,22 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
         self.view.addSubview(sc);
         
         
-        self.view.addSubview(myLabel)
         
-        // 枠を丸くする.
-        myLabel.layer.masksToBounds = true
         
-        // コーナーの半径.
-        myLabel.layer.cornerRadius = 20.0
+        // TextView生成する.
         
-        // Labelに文字を代入.
-        myLabel.text = "Hello Swift!!"
+        // TextViewの背景を黃色に設定する.
+        myTextView.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 1, alpha: 1.0)
         
-        // 文字の色を白にする.
-        myLabel.textColor = UIColor.whiteColor()
+        // 表示させるテキストを設定する.
+        myTextView.text = ""
         
-        // 文字の影の色をグレーにする.
-        myLabel.shadowColor = UIColor.grayColor()
+        myTextView.editable = false
+        // TextViewをViewに追加する.
+        self.view.addSubview(myTextView)
         
-        // Textを中央寄せにする.
-        myLabel.textAlignment = NSTextAlignment.Center
         
-        // 配置する座標を設定する.
-        myLabel.layer.position = CGPoint(x: self.view.bounds.width/2,y: 200)
-
+        
         
         // 表示する文字を代入する.
         text1.text = "hoge"
@@ -169,15 +161,33 @@ class ViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegat
     internal func onClickMyButton(sender: UIButton){
         
         let com = Comment()
+    
+        var hoge:String = ""
+        
         
         com.comment = text1.text!
-        
+                
         do{
             let realm = try! Realm()
-            try! realm.write {
-                realm.add(com)
+            var max = realm.objects(Comment).sorted("id",ascending:false)
+            com.id = max[0].id + 1
+            
+            let comments = realm.objects(Comment)
+            
+            for comment in comments {
+                hoge += comment.comment
+                hoge += "\n"
+                print("\(comment.comment))")
             }
+            
+            try! realm.write {
+                realm.add(com,update: true)
+            }
+            
+            
+            myTextView.text = hoge
             print(realm.objects(Comment))
+            print(realm.path)
             text1.text = ""
         }catch{
             print("failure")
