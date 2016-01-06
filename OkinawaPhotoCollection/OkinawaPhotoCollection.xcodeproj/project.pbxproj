@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		236B90531BFC5CBE0009F6AC /* CoreLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236B90521BFC5CBE0009F6AC /* CoreLocationController.swift */; };
 		6126EA581BECD0570052643C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6126EA571BECD0570052643C /* AppDelegate.swift */; };
 		6126EA5B1BECD0570052643C /* OkinawaPhotoCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6126EA591BECD0570052643C /* OkinawaPhotoCollection.xcdatamodeld */; };
-		6126EA5D1BECD0570052643C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6126EA5C1BECD0570052643C /* MasterViewController.swift */; };
-		6126EA5F1BECD0570052643C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6126EA5E1BECD0570052643C /* DetailViewController.swift */; };
 		6126EA621BECD0570052643C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6126EA601BECD0570052643C /* Main.storyboard */; };
 		6126EA641BECD0570052643C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6126EA631BECD0570052643C /* Assets.xcassets */; };
 		6126EA671BECD0570052643C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6126EA651BECD0570052643C /* LaunchScreen.storyboard */; };
@@ -25,6 +22,7 @@
 		AA44EC571C17F062000C8CAA /* PlaceSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44EC561C17F062000C8CAA /* PlaceSelectViewController.swift */; };
 		AA44EC591C17F080000C8CAA /* PurposeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44EC581C17F080000C8CAA /* PurposeSelectViewController.swift */; };
 		AA44EC5B1C17F08F000C8CAA /* AgeSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44EC5A1C17F08F000C8CAA /* AgeSelectViewController.swift */; };
+		AA81C0081C3CCEAA00BC72B4 /* PageMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA81C0071C3CCEAA00BC72B4 /* PageMenuViewController.swift */; };
 		AA8CCAFE1C181CCE007148AB /* json.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CCAFD1C181CCE007148AB /* json.swift */; };
 		AA8CCB021C181EC6007148AB /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CCB011C181EC6007148AB /* PhotoViewController.swift */; };
 		AA8CCB041C187E69007148AB /* InportDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8CCB031C187E69007148AB /* InportDatas.swift */; };
@@ -54,6 +52,12 @@
 		AA8CCB391C188455007148AB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8CCB381C188455007148AB /* MapKit.framework */; };
 		AA8CCB3B1C1888D0007148AB /* kouri.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AA8CCB3A1C1888D0007148AB /* kouri.jpg */; };
 		AAAC27721C18AA6E007CF8C0 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAC27711C18AA6E007CF8C0 /* CGPoint.swift */; };
+		AAB9A4801C3D452100172C3B /* SelectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB9A47F1C3D452100172C3B /* SelectButton.swift */; };
+		AAB9A4821C3D468500172C3B /* sample.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AAB9A4811C3D468500172C3B /* sample.jpg */; };
+		AAB9A4861C3D556B00172C3B /* south.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB9A4851C3D556B00172C3B /* south.png */; };
+		AAB9A4881C3D5AE600172C3B /* north.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB9A4871C3D5AE600172C3B /* north.png */; };
+		AAB9A48A1C3D5CCF00172C3B /* middle.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB9A4891C3D5CCF00172C3B /* middle.png */; };
+		AAB9A48C1C3D5E1E00172C3B /* nowLocation.png in Resources */ = {isa = PBXBuildFile; fileRef = AAB9A48B1C3D5E1E00172C3B /* nowLocation.png */; };
 		B7FC49909AA34B1A579B4ED8 /* Pods_OkinawaPhotoCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6BBEC5E44AB02C7D75A9F7 /* Pods_OkinawaPhotoCollection.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,12 +80,9 @@
 
 /* Begin PBXFileReference section */
 		068853F9544C2B40A58B8B8F /* Pods-OkinawaPhotoCollection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OkinawaPhotoCollection.release.xcconfig"; path = "Pods/Target Support Files/Pods-OkinawaPhotoCollection/Pods-OkinawaPhotoCollection.release.xcconfig"; sourceTree = "<group>"; };
-		236B90521BFC5CBE0009F6AC /* CoreLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationController.swift; sourceTree = "<group>"; };
 		6126EA541BECD0570052643C /* OkinawaPhotoCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OkinawaPhotoCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6126EA571BECD0570052643C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6126EA5A1BECD0570052643C /* OkinawaPhotoCollection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OkinawaPhotoCollection.xcdatamodel; sourceTree = "<group>"; };
-		6126EA5C1BECD0570052643C /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		6126EA5E1BECD0570052643C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6126EA611BECD0570052643C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6126EA631BECD0570052643C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6126EA661BECD0570052643C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,6 +103,8 @@
 		AA44EC561C17F062000C8CAA /* PlaceSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceSelectViewController.swift; sourceTree = "<group>"; };
 		AA44EC581C17F080000C8CAA /* PurposeSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PurposeSelectViewController.swift; sourceTree = "<group>"; };
 		AA44EC5A1C17F08F000C8CAA /* AgeSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgeSelectViewController.swift; sourceTree = "<group>"; };
+		AA81C0071C3CCEAA00BC72B4 /* PageMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageMenuViewController.swift; sourceTree = "<group>"; };
+		AA81C0091C3CD0E800BC72B4 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		AA8CCAFD1C181CCE007148AB /* json.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = json.swift; sourceTree = "<group>"; };
 		AA8CCB011C181EC6007148AB /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		AA8CCB031C187E69007148AB /* InportDatas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InportDatas.swift; sourceTree = "<group>"; };
@@ -131,6 +134,12 @@
 		AA8CCB381C188455007148AB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AA8CCB3A1C1888D0007148AB /* kouri.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kouri.jpg; sourceTree = "<group>"; };
 		AAAC27711C18AA6E007CF8C0 /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
+		AAB9A47F1C3D452100172C3B /* SelectButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectButton.swift; sourceTree = "<group>"; };
+		AAB9A4811C3D468500172C3B /* sample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample.jpg; sourceTree = "<group>"; };
+		AAB9A4851C3D556B00172C3B /* south.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = south.png; sourceTree = "<group>"; };
+		AAB9A4871C3D5AE600172C3B /* north.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = north.png; sourceTree = "<group>"; };
+		AAB9A4891C3D5CCF00172C3B /* middle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = middle.png; sourceTree = "<group>"; };
+		AAB9A48B1C3D5E1E00172C3B /* nowLocation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nowLocation.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,19 +204,23 @@
 			isa = PBXGroup;
 			children = (
 				6126EA571BECD0570052643C /* AppDelegate.swift */,
-				6126EA5C1BECD0570052643C /* MasterViewController.swift */,
-				6126EA5E1BECD0570052643C /* DetailViewController.swift */,
-				236B90521BFC5CBE0009F6AC /* CoreLocationController.swift */,
 				AA44EC4A1C17E70C000C8CAA /* PhotoCollectionViewController.swift */,
 				AA44EC4C1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift */,
 				AA8CCB011C181EC6007148AB /* PhotoViewController.swift */,
 				AA8CCB341C1882EB007148AB /* InfomationViewController.swift */,
+				AAB9A47F1C3D452100172C3B /* SelectButton.swift */,
 				AA8CCB361C1883EB007148AB /* RouteViewController.swift */,
+				AAB9A48B1C3D5E1E00172C3B /* nowLocation.png */,
+				AAB9A4871C3D5AE600172C3B /* north.png */,
+				AAB9A4891C3D5CCF00172C3B /* middle.png */,
+				AAB9A4851C3D556B00172C3B /* south.png */,
 				AA8CCAFC1C181961007148AB /* SelectPhotos */,
 				AA44EC501C17ED50000C8CAA /* RealmObjects.swift */,
 				AA8CCB031C187E69007148AB /* InportDatas.swift */,
+				AA81C0091C3CD0E800BC72B4 /* Bridging-Header.h */,
 				AA8CCAFD1C181CCE007148AB /* json.swift */,
 				AAAC27711C18AA6E007CF8C0 /* CGPoint.swift */,
+				AAB9A4811C3D468500172C3B /* sample.jpg */,
 				AA8CCB311C187F56007148AB /* InitDatas */,
 				6126EA601BECD0570052643C /* Main.storyboard */,
 				6126EA631BECD0570052643C /* Assets.xcassets */,
@@ -243,6 +256,7 @@
 				AA44EC561C17F062000C8CAA /* PlaceSelectViewController.swift */,
 				AA44EC581C17F080000C8CAA /* PurposeSelectViewController.swift */,
 				AA44EC5A1C17F08F000C8CAA /* AgeSelectViewController.swift */,
+				AA81C0071C3CCEAA00BC72B4 /* PageMenuViewController.swift */,
 			);
 			name = SelectPhotos;
 			sourceTree = "<group>";
@@ -411,14 +425,17 @@
 			files = (
 				AA8CCB1C1C187F4A007148AB /* americanvillage.jpg in Resources */,
 				AA8CCB2B1C187F4A007148AB /* nattyan.jpg in Resources */,
+				AAB9A4821C3D468500172C3B /* sample.jpg in Resources */,
 				AA8CCB271C187F4A007148AB /* chiragwa.jpg in Resources */,
 				AA8CCB1D1C187F4A007148AB /* himeyuri.jpg in Resources */,
 				AA8CCB1E1C187F4A007148AB /* kaiyohakukoen.jpg in Resources */,
+				AAB9A48A1C3D5CCF00172C3B /* middle.png in Resources */,
 				AA8CCB2D1C187F4A007148AB /* saikyo_ginowan.jpg in Resources */,
 				AA8CCB1F1C187F4A007148AB /* kokusaidori.jpg in Resources */,
 				6126EA671BECD0570052643C /* LaunchScreen.storyboard in Resources */,
 				6126EA641BECD0570052643C /* Assets.xcassets in Resources */,
 				AA44EC4F1C17EA55000C8CAA /* smile.png in Resources */,
+				AAB9A4881C3D5AE600172C3B /* north.png in Resources */,
 				AA8CCB251C187F4A007148AB /* syurizyo.jpg in Resources */,
 				AA8CCB201C187F4A007148AB /* manzamo.jpg in Resources */,
 				AA8CCB2A1C187F4A007148AB /* minosaku.jpg in Resources */,
@@ -427,6 +444,7 @@
 				AA8CCB2C1C187F4A007148AB /* pocket_ginowan.jpg in Resources */,
 				AA8CCB261C187F4A007148AB /* AandW_makiminato.jpg in Resources */,
 				AA8CCB221C187F4A007148AB /* niraikanaibashi.jpg in Resources */,
+				AAB9A4861C3D556B00172C3B /* south.png in Resources */,
 				AA8CCB3B1C1888D0007148AB /* kouri.jpg in Resources */,
 				AA8CCB241C187F4A007148AB /* Activity.json in Resources */,
 				AA8CCB281C187F4A007148AB /* Food.json in Resources */,
@@ -435,6 +453,7 @@
 				AA8CCB211C187F4A007148AB /* nagopainapplepark.jpg in Resources */,
 				AA8CCB231C187F4A007148AB /* outletmallashibina.jpg in Resources */,
 				AA8CCB2F1C187F4A007148AB /* untama.jpg in Resources */,
+				AAB9A48C1C3D5E1E00172C3B /* nowLocation.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,22 +527,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA44EC511C17ED50000C8CAA /* RealmObjects.swift in Sources */,
-				236B90531BFC5CBE0009F6AC /* CoreLocationController.swift in Sources */,
 				AA8CCB371C1883EB007148AB /* RouteViewController.swift in Sources */,
 				6126EA581BECD0570052643C /* AppDelegate.swift in Sources */,
 				AAAC27721C18AA6E007CF8C0 /* CGPoint.swift in Sources */,
 				6126EA5B1BECD0570052643C /* OkinawaPhotoCollection.xcdatamodeld in Sources */,
-				6126EA5D1BECD0570052643C /* MasterViewController.swift in Sources */,
+				AAB9A4801C3D452100172C3B /* SelectButton.swift in Sources */,
 				AA44EC4D1C17E7A9000C8CAA /* PhotoCollectionViewCell.swift in Sources */,
 				AA44EC571C17F062000C8CAA /* PlaceSelectViewController.swift in Sources */,
 				AA44EC591C17F080000C8CAA /* PurposeSelectViewController.swift in Sources */,
+				AA81C0081C3CCEAA00BC72B4 /* PageMenuViewController.swift in Sources */,
 				AA8CCAFE1C181CCE007148AB /* json.swift in Sources */,
 				AA44EC5B1C17F08F000C8CAA /* AgeSelectViewController.swift in Sources */,
 				AA44EC531C17EFC0000C8CAA /* TopTabViewController.swift in Sources */,
 				AA8CCB041C187E69007148AB /* InportDatas.swift in Sources */,
 				AA8CCB351C1882EB007148AB /* InfomationViewController.swift in Sources */,
 				AA8CCB021C181EC6007148AB /* PhotoViewController.swift in Sources */,
-				6126EA5F1BECD0570052643C /* DetailViewController.swift in Sources */,
 				AA44EC4B1C17E70C000C8CAA /* PhotoCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -670,6 +688,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ie2015-A.OkinawaPhotoCollection";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OkinawaPhotoCollection/Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -683,6 +702,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ie2015-A.OkinawaPhotoCollection";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "OkinawaPhotoCollection/Bridging-Header.h";
 			};
 			name = Release;
 		};

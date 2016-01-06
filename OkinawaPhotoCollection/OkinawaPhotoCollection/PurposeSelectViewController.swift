@@ -60,7 +60,7 @@ class PurposeSelectViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func showPhotos(sender: UIButton) {
-        print(sender.tag)
+//        print(sender.tag)
     }
 
     override func didReceiveMemoryWarning() {

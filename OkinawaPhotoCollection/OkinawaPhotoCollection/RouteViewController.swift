@@ -12,8 +12,10 @@ import RealmSwift
 
 class RouteViewController: UIViewController, MKMapViewDelegate {
     let delegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
         
         let realm = try! Realm()
         let photo = realm.objects(Photo).filter("id == \(self.delegate.pictureID)").first!

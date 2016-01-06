@@ -1,4 +1,5 @@
 PODS:
+  - PageMenu (1.2.8)
   - Realm (0.96.2):
     - Realm/Headers (= 0.96.2)
   - Realm/Headers (0.96.2)
@@ -7,6 +8,7 @@ PODS:
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
+  - PageMenu
   - RealmSwift
   - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
 
@@ -20,6 +22,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
+  PageMenu: 703e82e173f54a4626ab88fcdca7703ee52e0cbe
   Realm: 3ce8448151c571e90b85002d984d7f93f54fc8a3
   RealmSwift: 485599fe54e35461c4a0daa7d01d8fbf11424873
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a

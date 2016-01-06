@@ -60,9 +60,17 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate,
         myCollectionView.backgroundColor = UIColor.whiteColor()
         
         self.view.addSubview(myCollectionView)
+		
+		self.navigationItem.title = "PhotoCollection"
+		let cancelButton: UIBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain , target: self, action: "popView:")
+		self.navigationItem.rightBarButtonItem = cancelButton
         
         // Do any additional setup after loading the view.
     }
+	
+	func popView(sender: UIBarButtonItem) {
+		self.dismissViewControllerAnimated(true, completion: nil)
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -102,14 +110,13 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate,
         if self.delegate.showsID == 0 {
             var diffArr: [CGFloat] = []
             let myLocation: CGPoint = CGPoint(x: 90, y: self.longitude)
+//            let myLocation: CGPoint = CGPoint(x: self.latitude, y: self.longitude)
             for photo in photos {
                 let photoLocation: CGPoint = CGPoint(x: photo.latitude, y: photo.longitude)
                 let distance = (photoLocation - myLocation).length
                 diffArr.append(distance)
                 photosArr.append(photo)
-                print(photo.name)
             }
-            print("######")
             for i in 0..<diffArr.count {
                 for j in 1..<diffArr.count {
                     if diffArr[i] > diffArr[j] {
@@ -121,9 +128,6 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate,
                         photosArr[j] = tmpPhoto
                     }
                 }
-            }
-            for p in photosArr {
-                print(p.name)
             }
         }
         // 押されたボタンが場所で探すのとき
@@ -140,8 +144,8 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate,
         // 取得した経度がnewLocation.coordinate.longitudeに格納されている
         let long = newLocation.coordinate.longitude
         // 取得した緯度・経度をLogに表示
-        print("latiitude: \(lat) , longitude: \(long)")
-        
+//        print("latiitude: \(lat) , longitude: \(long)")
+		
         // GPSの使用を停止する．停止しない限りGPSは実行され，指定間隔で更新され続ける．
          lm.stopUpdatingLocation()
     }
