@@ -40,7 +40,7 @@ class ImportDatas {
                 insData.place = j.1["place"].asInt!
                 insData.name = j.1["name"].asString!
 				insData.category = 0
-				insData.age = j.1["age"].asInt!
+				insData.age = j.1["age"].asInt! - 1
                 try! realm.write({
                     realm.add(insData)
                 })
@@ -65,7 +65,7 @@ class ImportDatas {
                 insData.place = j.1["place"].asInt!
                 insData.name = j.1["name"].asString!
 				insData.category = 1
-				insData.age = j.1["age"].asInt!
+				insData.age = j.1["age"].asInt! - 1
                 try! realm.write({
                     realm.add(insData)
                 })

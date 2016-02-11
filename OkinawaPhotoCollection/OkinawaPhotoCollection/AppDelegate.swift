@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 //        } else {
 //            print("Not Copy!")
 //        }
-		print(Realm.defaultPath)
+//		print(Realm.defaultPath)
         let firstView: TopTabViewController = TopTabViewController()
         let myNavigationController: UINavigationController = UINavigationController(rootViewController: firstView)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)

@@ -46,8 +46,8 @@ class TopTabViewController: UITabBarController, CAPSPageMenuDelegate {
 		
 		self.view.addSubview(pageMenu!.view)
 		
-		let insdata = ImportDatas()
-		print(insdata.run())
+//		let insdata = ImportDatas()
+//		print(insdata.run())
 		
 		
 //        placeSelectView.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.Favorites, tag: 1)
@@ -58,13 +58,13 @@ class TopTabViewController: UITabBarController, CAPSPageMenuDelegate {
 //        self.selectedViewController! = placeSelectView
 //        self.automaticallyAdjustsScrollViewInsets = false
 //        
-//        if !NSFileManager.defaultManager().fileExistsAtPath(Realm.Configuration.defaultConfiguration.path!) {
-//            let insData = ImportDatas()
-//            print(insData.run())
-//            
-//        } else {
-//            print("Not Copy!")
-//        }
+        if !NSFileManager.defaultManager().fileExistsAtPath(Realm.Configuration.defaultConfiguration.path!) {
+            let insData = ImportDatas()
+            print(insData.run())
+            
+        } else {
+            print("Not Copy!")
+        }
 
         // Do any additional setup after loading the view.
     }

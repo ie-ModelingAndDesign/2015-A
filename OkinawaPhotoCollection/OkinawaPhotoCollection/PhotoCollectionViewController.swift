@@ -10,7 +10,7 @@ import UIKit
 import RealmSwift
 import CoreLocation
 
-class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate {
+class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, CLLocationManagerDelegate, UICollectionViewDelegateFlowLayout {
     var myCollectionView: UICollectionView!
     var photosArr: [Photo] = []
     
@@ -48,12 +48,15 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate,
         // GPSの使用を開始する
         
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
-        layout.headerReferenceSize = CGSizeMake(10, 28)
+        layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
+        layout.headerReferenceSize = CGSizeMake(10, 10)
         layout.minimumInteritemSpacing = 0.0
-        layout.minimumLineSpacing = 0.0
-        
+        layout.minimumLineSpacing = 5.0
+		
+//		let collectFrame: CGRect = CGRectMake(10, self.view.frame.origin.y, self.view.frame.size.width - 10*2, self.view.frame.size.height)
+		
         myCollectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
+//        myCollectionView = UICollectionView(frame: collectFrame, collectionViewLayout: layout)
         myCollectionView.registerClass(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
         myCollectionView.delegate = self
         myCollectionView.dataSource = self
@@ -70,6 +73,9 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate,
 	
 	func popView(sender: UIBarButtonItem) {
 		self.dismissViewControllerAnimated(true, completion: nil)
+		self.delegate.showsID = 0
+		self.delegate.categoryID = 0
+		self.delegate.ageID = 0
 	}
 
     override func didReceiveMemoryWarning() {
@@ -106,6 +112,7 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate,
     override func viewWillAppear(animated: Bool) {
         let realm = try! Realm()
         // 押されたボタンが現在地で探すのとき
+		photosArr = []
 		if self.delegate.showsID != -1 {
             let photos = realm.objects(Photo)
             if self.delegate.showsID == 0 {
@@ -130,6 +137,12 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate,
                         }
                     }
                 }
+				print("###############")
+				for photo in photosArr {
+					print(photo.name)
+				}
+				
+				print("###############")
             }
             // 押されたボタンが場所で探すのとき
             else if self.delegate.showsID < 4 {
@@ -150,6 +163,10 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate,
 		}
 		
     }
+	
+	func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+		return CGSizeMake(100, 100)
+	}
     
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation){
         // 取得した緯度がnewLocation.coordinate.longitudeに格納されている
@@ -170,9 +187,6 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate,
     }
 	
 	override func viewWillDisappear(animated: Bool) {
-		self.delegate.showsID = 0
-		self.delegate.categoryID = 0
-		self.delegate.ageID = 0
 	}
     
     
