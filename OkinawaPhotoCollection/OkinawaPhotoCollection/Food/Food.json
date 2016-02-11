@@ -2,6 +2,7 @@
   {
   "name": "ビタミン とんこつ がりゅうや （Vitamin）",
   "place": 1,
+  "age":2,
   "latitude": 26.253801,
   "longitude": 127.763347,
   "photoName": "garyu",
@@ -10,6 +11,7 @@
   {
   "name": "ちらー小(ぐゎー)",
   "place": 2,
+  "age":4,
   "latitude": 26.210078,
   "longitude": 127.723468,
   "photoName": "chiragwa",
@@ -18,6 +20,7 @@
   {
   "name": "美濃作",
   "place": 2,
+  "age":3,
   "latitude": 26.214793,
   "longitude": 127.681710,
   "photoName": "minosaku",
@@ -26,6 +29,7 @@
   {
   "name": "タコスの店 なっちゃん",
   "place": 1,
+  "age":2,
   "latitude": 26.258201,
   "longitude": 127.768626,
   "photoName": "nattyan",
@@ -34,6 +38,7 @@
   {
   "name": "運玉食堂",
   "place": 1,
+  "age":4,
   "latitude": 26.217689,
   "longitude": 127.740615,
   "photoName": "untama",
@@ -42,6 +47,7 @@
   {
   "name": "麺屋 武虎 宜野湾店",
   "place": 1,
+  "age":2,
   "latitude": 26.256977,
   "longitude": 127.751132,
   "photoName": "taketora_ginowan",
@@ -50,6 +56,7 @@
   {
   "name": "ポケットマーニー 宜野湾店",
   "place": 1,
+  "age":2,
   "latitude": 26.262556,
   "longitude": 127.751864,
   "photoName": "pocket_ginowan",
@@ -58,6 +65,7 @@
   {
   "name": "A&W 牧港店",
   "place": 1,
+  "age":1,
   "latitude": 26.266634,
   "longitude": 127.728390,
   "photoName": "AandW_makiminato",
@@ -66,6 +74,7 @@
   {
   "name": "沖縄そば専門店 与那原家",
   "place": 2,
+  "age":1,
   "latitude": 26.208703,
   "longitude": 127.758143,
   "photoName": "yonabaruya",
@@ -74,9 +83,10 @@
   {
   "name": "最強食堂 宜野湾店",
   "place": 2,
+  "age":2,
   "latitude": 26.270019,
   "longitude": 127.768783,
   "photoName": "saikyo_ginowan",
   "siteURL": "http://tabelog.com/okinawa/A4703/A470404/47005652/"
   },
-  ]
+]

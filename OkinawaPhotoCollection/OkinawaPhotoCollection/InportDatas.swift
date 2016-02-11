@@ -39,6 +39,8 @@ class ImportDatas {
                 insData.url = j.1["siteURL"].asString!
                 insData.place = j.1["place"].asInt!
                 insData.name = j.1["name"].asString!
+				insData.category = 0
+				insData.age = j.1["age"].asInt!
                 try! realm.write({
                     realm.add(insData)
                 })
@@ -62,6 +64,8 @@ class ImportDatas {
                 insData.url = j.1["siteURL"].asString!
                 insData.place = j.1["place"].asInt!
                 insData.name = j.1["name"].asString!
+				insData.category = 1
+				insData.age = j.1["age"].asInt!
                 try! realm.write({
                     realm.add(insData)
                 })

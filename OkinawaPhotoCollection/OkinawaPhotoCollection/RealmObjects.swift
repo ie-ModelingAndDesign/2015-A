@@ -16,6 +16,8 @@ class Photo: Object {
     dynamic var url: String = ""
     dynamic var place: Int = 0
     dynamic var name: String = ""
+	dynamic var category: Int = 0
+	dynamic var age: Int = 0
     
     override class func primaryKey() -> String {
         return "id"

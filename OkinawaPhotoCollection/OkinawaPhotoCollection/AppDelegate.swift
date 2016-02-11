@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     var window: UIWindow?
     var showsID: Int?
     var pictureID: Int = 0
+	var categoryID: Int = 0
+	var ageID: Int = 0
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -28,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 //        } else {
 //            print("Not Copy!")
 //        }
+		print(Realm.defaultPath)
         let firstView: TopTabViewController = TopTabViewController()
         let myNavigationController: UINavigationController = UINavigationController(rootViewController: firstView)
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)

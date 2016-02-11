@@ -2,6 +2,7 @@
   {
   "name": "首里城",
   "place":2,
+  "age":4,
   "latitude": 26.216953055555553,
   "longitude":127.7194475,
   "photoName": "syurizyo",
@@ -10,6 +11,7 @@
   {
   "name": "海洋博公園",
   "place":0,
+  "age":1,
   "latitude": 26.690834722222224,
   "longitude": 127.87777916666666,
   "photoName": "kaiyohakukoen",
@@ -18,6 +20,7 @@
   {
   "name": "ひめゆり平和祈念資料館",
   "place":2,
+  "age":4,
   "latitude": 26.09639027777778,
   "longitude": 127.69055694444445,
   "photoName": "himeyuri",
@@ -26,6 +29,7 @@
   {
   "name": "古宇利島",
   "place":0,
+  "age":3,
   "latitude": 26.70611111111111,
   "longitude": 128.01777777777778,
   "photoName": "kouri",
@@ -34,6 +38,7 @@
   {
   "name": "アメリカンビレッジ",
   "place":1,
+  "age":2,
   "latitude": 26.31646321,
   "longitude": 127.7573025,
   "photoName": "americanvillage",
@@ -42,6 +47,7 @@
   {
   "name": "国際通り",
   "place":2,
+  "age":1,
   "latitude": 26.214853,
   "longitude": 127.683739,
   "photoName": "kokusaidori",
@@ -50,6 +56,7 @@
   {
   "name": "ニライカナイ橋",
   "place":2,
+  "age":3,
   "latitude": 26.16746,
   "longitude": 127.815186,
   "photoName": "niraikanaibashi",
@@ -58,6 +65,7 @@
   {
   "name": "アウトレットモールあしびなー",
   "place":2,
+  "age":2,
   "latitude": 26.158267,
   "longitude": 127.657821,
   "photoName": "outletmallashibina",
@@ -66,6 +74,7 @@
   {
   "name": "名護パイナップルパーク",
   "place":0,
+  "age":1,
   "latitude": 26.616545,
   "longitude": 127.969585,
   "photoName": "nagopainapplepark",
@@ -74,9 +83,10 @@
   {
   "name": "万座毛",
   "place":0,
+  "age":3,
   "latitude": 26.504906,
   "longitude": 127.850231,
   "photoName": "manzamo",
   "siteURL": "hhttp://www.okinawastory.jp/view/portal/0030000060/"
   }
-  ]
+]

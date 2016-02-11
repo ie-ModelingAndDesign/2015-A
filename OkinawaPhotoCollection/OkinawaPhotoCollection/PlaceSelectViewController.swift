@@ -37,12 +37,26 @@ class PlaceSelectViewController: UIViewController, CLLocationManagerDelegate  {
 		showPhotosButtonMiddle.userInteractionEnabled = true
 		showPhotosButtonSouth.userInteractionEnabled = true
 		
-		let btnWth: CGFloat = UIScreen.mainScreen().bounds.size.width
-		let btnHth: CGFloat = (UIScreen.mainScreen().bounds.size.height - 64) / 4
-		let btnX: CGFloat = 0
+//		let scrollView: UIScrollView = UIScrollView()
+//		self.view.addSubview(scrollView)
+		let btnMarginTop: CGFloat = 10
+		let btnX: CGFloat = 10
+		let btnWth: CGFloat = UIScreen.mainScreen().bounds.size.width - (btnX*2)
+		let btnHth: CGFloat = (UIScreen.mainScreen().bounds.size.height - 64) / 4 - (btnMarginTop)
+		
+//		scrollView.userInteractionEnabled = true
+//		
+//		scrollView.pagingEnabled = false
+//		scrollView.scrollEnabled = true
+//		scrollView.frame = CGRectMake(0, 0, btnWth, self.view.bounds.height - 64)
+//		scrollView.showsVerticalScrollIndicator = true
+//		scrollView.showsHorizontalScrollIndicator = false
+//		scrollView.scrollsToTop = true
+//		scrollView.contentSize = CGSizeMake(btnWth, btnHth * 4 + 64)
+		
 		showPhotosButtonNowLocation.backgroundColor = UIColor.blackColor()
 		showPhotosButtonNowLocation.tag = 0
-		showPhotosButtonNowLocation.frame = CGRectMake(btnX, 0, btnWth,btnHth)
+		showPhotosButtonNowLocation.frame = CGRectMake(btnX, btnMarginTop, btnWth - (btnX*2),btnHth)
 		let nowLocationImage: UIImage = UIImage(named: "nowLocation.png")!
 		let nowLocationImageView: UIImageView = UIImageView(image: nowLocationImage)
 		nowLocationImageView.alpha = 1.0
@@ -57,12 +71,13 @@ class PlaceSelectViewController: UIViewController, CLLocationManagerDelegate  {
 		nowLocationLabel.frame = CGRectMake(btnWth / 2 - (labelSize.width / 2), btnHth / 2 - (labelSize.height / 2), labelSize.width, labelSize.height)
 		showPhotosButtonNowLocation.addSubview(nowLocationLabel)
 		showPhotosButtonNowLocation.bringSubviewToFront(nowLocationLabel)
-		
+//		scrollView.addSubview(showPhotosButtonNowLocation)
 		self.view.addSubview(showPhotosButtonNowLocation)
 		
 		showPhotosButtonNorth.backgroundColor = UIColor.blackColor()
 		showPhotosButtonNorth.tag = 1
-		showPhotosButtonNorth.frame = CGRectMake(btnX, showPhotosButtonNowLocation.frame.origin.y + showPhotosButtonNowLocation.frame.size.height, btnWth,btnHth)
+		showPhotosButtonNorth.frame = CGRectMake(btnX, showPhotosButtonNowLocation.frame.origin.y + showPhotosButtonNowLocation.frame.size.height + btnMarginTop, btnWth - (btnX*2),btnHth)
+		showPhotosButtonNorth.userInteractionEnabled = true
 		let northImage: UIImage = UIImage(named: "north.png")!
 		let northImageView: UIImageView = UIImageView(image: northImage)
 		northImageView.alpha = 1.0
@@ -80,7 +95,7 @@ class PlaceSelectViewController: UIViewController, CLLocationManagerDelegate  {
 		
 		showPhotosButtonMiddle.backgroundColor = UIColor.blackColor()
 		showPhotosButtonMiddle.tag = 2
-		showPhotosButtonMiddle.frame = CGRectMake(btnX, showPhotosButtonNorth.frame.origin.y + showPhotosButtonNorth.frame.size.height, btnWth,btnHth)
+		showPhotosButtonMiddle.frame = CGRectMake(btnX, showPhotosButtonNorth.frame.origin.y + showPhotosButtonNorth.frame.size.height + btnMarginTop, btnWth - btnX,btnHth)
 		let middleImage: UIImage = UIImage(named: "middle.png")!
 		let middleImageView: UIImageView = UIImageView(image: middleImage)
 		middleImageView.alpha = 1.0
@@ -98,7 +113,7 @@ class PlaceSelectViewController: UIViewController, CLLocationManagerDelegate  {
 		
 		showPhotosButtonSouth.backgroundColor = UIColor.blackColor()
 		showPhotosButtonSouth.tag = 3
-		showPhotosButtonSouth.frame = CGRectMake(btnX, showPhotosButtonMiddle.frame.origin.y + showPhotosButtonMiddle.frame.size.height, btnWth,btnHth)
+		showPhotosButtonSouth.frame = CGRectMake(btnX, showPhotosButtonMiddle.frame.origin.y + showPhotosButtonMiddle.frame.size.height + btnMarginTop, btnWth - (btnX*2),btnHth)
 		let southImage: UIImage = UIImage(named: "south.png")!
 		let southImageView: UIImageView = UIImageView(image: southImage)
 		southImageView.alpha = 1.0
@@ -117,12 +132,15 @@ class PlaceSelectViewController: UIViewController, CLLocationManagerDelegate  {
 		//        showPhotosButtonSouth.setTitle("南部から探す", forState: .Normal)
 		//        showPhotosButtonSouth.addTarget(self, action: "showPhotos:", forControlEvents: .TouchUpInside)
 		self.view.addSubview(showPhotosButtonSouth)
+		
 	}
 	
 	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		let sender: UITouch = touches.first!
 		print(sender.view!.tag)
 		self.delegate.showsID = sender.view!.tag
+		self.delegate.categoryID = -1
+		self.delegate.ageID = -1
 		
 		let photos: PhotoCollectionViewController = PhotoCollectionViewController()
 		let myNavi: UINavigationController = UINavigationController(rootViewController: photos)

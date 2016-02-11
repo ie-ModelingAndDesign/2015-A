@@ -105,37 +105,50 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate,
     
     override func viewWillAppear(animated: Bool) {
         let realm = try! Realm()
-        let photos = realm.objects(Photo)
         // 押されたボタンが現在地で探すのとき
-        if self.delegate.showsID == 0 {
-            var diffArr: [CGFloat] = []
-            let myLocation: CGPoint = CGPoint(x: 90, y: self.longitude)
-//            let myLocation: CGPoint = CGPoint(x: self.latitude, y: self.longitude)
-            for photo in photos {
-                let photoLocation: CGPoint = CGPoint(x: photo.latitude, y: photo.longitude)
-                let distance = (photoLocation - myLocation).length
-                diffArr.append(distance)
-                photosArr.append(photo)
-            }
-            for i in 0..<diffArr.count {
-                for j in 1..<diffArr.count {
-                    if diffArr[i] > diffArr[j] {
-                        let tmp: CGFloat = diffArr[i]
-                        diffArr[i] = diffArr[j]
-                        diffArr[j] = tmp
-                        let tmpPhoto: Photo = photosArr[i]
-                        photosArr[i] = photosArr[j]
-                        photosArr[j] = tmpPhoto
+		if self.delegate.showsID != -1 {
+            let photos = realm.objects(Photo)
+            if self.delegate.showsID == 0 {
+                var diffArr: [CGFloat] = []
+                let myLocation: CGPoint = CGPoint(x: 90, y: self.longitude)
+    //            let myLocation: CGPoint = CGPoint(x: self.latitude, y: self.longitude)
+                for photo in photos {
+                    let photoLocation: CGPoint = CGPoint(x: photo.latitude, y: photo.longitude)
+                    let distance = (photoLocation - myLocation).length
+                    diffArr.append(distance)
+                    photosArr.append(photo)
+                }
+                for i in 0..<diffArr.count {
+                    for j in 1..<diffArr.count {
+                        if diffArr[i] > diffArr[j] {
+                            let tmp: CGFloat = diffArr[i]
+                            diffArr[i] = diffArr[j]
+                            diffArr[j] = tmp
+                            let tmpPhoto: Photo = photosArr[i]
+                            photosArr[i] = photosArr[j]
+                            photosArr[j] = tmpPhoto
+                        }
                     }
                 }
             }
-        }
-        // 押されたボタンが場所で探すのとき
-        else if self.delegate.showsID < 4 {
-            for photo in photos.filter("place == \(self.delegate.showsID! - 1)") {
-                photosArr.append(photo)
+            // 押されたボタンが場所で探すのとき
+            else if self.delegate.showsID < 4 {
+                for photo in photos.filter("place == \(self.delegate.showsID! - 1)") {
+                    photosArr.append(photo)
+                }
             }
-        }
+		} else if self.delegate.categoryID != -1 {
+			let photos = realm.objects(Photo).filter("category == \(self.delegate.categoryID)")
+			for photo in photos {
+				self.photosArr.append(photo)
+			}
+		} else {
+			let photos = realm.objects(Photo).filter("age == \(self.delegate.ageID)")
+			for photo in photos {
+				self.photosArr.append(photo)
+			}
+		}
+		
     }
     
     func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation){
@@ -155,6 +168,12 @@ class PhotoCollectionViewController: UIViewController, UICollectionViewDelegate,
         // この例ではLogにErrorと表示するだけ．
         print("Error")
     }
+	
+	override func viewWillDisappear(animated: Bool) {
+		self.delegate.showsID = 0
+		self.delegate.categoryID = 0
+		self.delegate.ageID = 0
+	}
     
     
 

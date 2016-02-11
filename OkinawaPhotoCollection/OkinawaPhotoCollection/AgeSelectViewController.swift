@@ -36,19 +36,33 @@ class AgeSelectViewController: UIViewController {
 		showPhotosButtonMiddle.userInteractionEnabled = true
 		showPhotosButtonSouth.userInteractionEnabled = true
 		
-		let btnWth: CGFloat = UIScreen.mainScreen().bounds.size.width
-		let btnHth: CGFloat = (UIScreen.mainScreen().bounds.size.height - 64) / 4
-		let btnX: CGFloat = 0
+		//		let scrollView: UIScrollView = UIScrollView()
+		//		self.view.addSubview(scrollView)
+		let btnMarginTop: CGFloat = 10
+		let btnX: CGFloat = 10
+		let btnWth: CGFloat = UIScreen.mainScreen().bounds.size.width - (btnX*2)
+		let btnHth: CGFloat = (UIScreen.mainScreen().bounds.size.height - 64) / 4 - (btnMarginTop)
+		
+		//		scrollView.userInteractionEnabled = true
+		//
+		//		scrollView.pagingEnabled = false
+		//		scrollView.scrollEnabled = true
+		//		scrollView.frame = CGRectMake(0, 0, btnWth, self.view.bounds.height - 64)
+		//		scrollView.showsVerticalScrollIndicator = true
+		//		scrollView.showsHorizontalScrollIndicator = false
+		//		scrollView.scrollsToTop = true
+		//		scrollView.contentSize = CGSizeMake(btnWth, btnHth * 4 + 64)
+		
 		showPhotosButtonNowLocation.backgroundColor = UIColor.blackColor()
 		showPhotosButtonNowLocation.tag = 0
-		showPhotosButtonNowLocation.frame = CGRectMake(btnX, 0, btnWth,btnHth)
-		let nowLocationImage: UIImage = UIImage(named: "nowLocation.png")!
+		showPhotosButtonNowLocation.frame = CGRectMake(btnX, btnMarginTop, btnWth - (btnX*2),btnHth)
+		let nowLocationImage: UIImage = UIImage(named: "10.png")!
 		let nowLocationImageView: UIImageView = UIImageView(image: nowLocationImage)
-		nowLocationImageView.alpha = 0.7
+		nowLocationImageView.alpha = 1.0
 		nowLocationImageView.frame = CGRectMake(0, 0, btnWth, btnHth)
 		showPhotosButtonNowLocation.addSubview(nowLocationImageView)
 		let nowLocationLabel: UILabel = UILabel()
-		nowLocationLabel.text = "現在地から探す"
+		nowLocationLabel.text = "10代向け"
 		nowLocationLabel.textColor = UIColor.whiteColor()
 		nowLocationLabel.textAlignment = .Center
 		nowLocationLabel.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2)
@@ -56,19 +70,20 @@ class AgeSelectViewController: UIViewController {
 		nowLocationLabel.frame = CGRectMake(btnWth / 2 - (labelSize.width / 2), btnHth / 2 - (labelSize.height / 2), labelSize.width, labelSize.height)
 		showPhotosButtonNowLocation.addSubview(nowLocationLabel)
 		showPhotosButtonNowLocation.bringSubviewToFront(nowLocationLabel)
-		
+		//		scrollView.addSubview(showPhotosButtonNowLocation)
 		self.view.addSubview(showPhotosButtonNowLocation)
 		
 		showPhotosButtonNorth.backgroundColor = UIColor.blackColor()
 		showPhotosButtonNorth.tag = 1
-		showPhotosButtonNorth.frame = CGRectMake(btnX, showPhotosButtonNowLocation.frame.origin.y + showPhotosButtonNowLocation.frame.size.height, btnWth,btnHth)
-		let northImage: UIImage = UIImage(named: "north.png")!
+		showPhotosButtonNorth.frame = CGRectMake(btnX, showPhotosButtonNowLocation.frame.origin.y + showPhotosButtonNowLocation.frame.size.height + btnMarginTop, btnWth - (btnX*2),btnHth)
+		showPhotosButtonNorth.userInteractionEnabled = true
+		let northImage: UIImage = UIImage(named: "20.png")!
 		let northImageView: UIImageView = UIImageView(image: northImage)
-		northImageView.alpha = 0.7
+		northImageView.alpha = 1.0
 		northImageView.frame = CGRectMake(0, 0, btnWth, btnHth)
 		showPhotosButtonNorth.addSubview(northImageView)
 		let northLabel: UILabel = UILabel()
-		northLabel.text = "北部から探す"
+		northLabel.text = "20代向け"
 		northLabel.textColor = UIColor.whiteColor()
 		northLabel.textAlignment = .Center
 		northLabel.frame = CGRectMake(btnWth / 2 - (labelSize.width / 2), btnHth / 2 - (labelSize.height / 2), labelSize.width, labelSize.height)
@@ -79,14 +94,14 @@ class AgeSelectViewController: UIViewController {
 		
 		showPhotosButtonMiddle.backgroundColor = UIColor.blackColor()
 		showPhotosButtonMiddle.tag = 2
-		showPhotosButtonMiddle.frame = CGRectMake(btnX, showPhotosButtonNorth.frame.origin.y + showPhotosButtonNorth.frame.size.height, btnWth,btnHth)
-		let middleImage: UIImage = UIImage(named: "middle.png")!
+		showPhotosButtonMiddle.frame = CGRectMake(btnX, showPhotosButtonNorth.frame.origin.y + showPhotosButtonNorth.frame.size.height + btnMarginTop, btnWth - btnX,btnHth)
+		let middleImage: UIImage = UIImage(named: "30.png")!
 		let middleImageView: UIImageView = UIImageView(image: middleImage)
-		middleImageView.alpha = 0.7
+		middleImageView.alpha = 1.0
 		middleImageView.frame = CGRectMake(0, 0, btnWth, btnHth)
 		showPhotosButtonMiddle.addSubview(middleImageView)
 		let middleLabel: UILabel = UILabel()
-		middleLabel.text = "中部から探す"
+		middleLabel.text = "30,40代向け"
 		middleLabel.textColor = UIColor.whiteColor()
 		middleLabel.textAlignment = .Center
 		middleLabel.frame = CGRectMake(btnWth / 2 - (labelSize.width / 2), btnHth / 2 - (labelSize.height / 2), labelSize.width, labelSize.height)
@@ -97,14 +112,14 @@ class AgeSelectViewController: UIViewController {
 		
 		showPhotosButtonSouth.backgroundColor = UIColor.blackColor()
 		showPhotosButtonSouth.tag = 3
-		showPhotosButtonSouth.frame = CGRectMake(btnX, showPhotosButtonMiddle.frame.origin.y + showPhotosButtonMiddle.frame.size.height, btnWth,btnHth)
-		let southImage: UIImage = UIImage(named: "south.png")!
+		showPhotosButtonSouth.frame = CGRectMake(btnX, showPhotosButtonMiddle.frame.origin.y + showPhotosButtonMiddle.frame.size.height + btnMarginTop, btnWth - (btnX*2),btnHth)
+		let southImage: UIImage = UIImage(named: "other.png")!
 		let southImageView: UIImageView = UIImageView(image: southImage)
-		southImageView.alpha = 0.7
+		southImageView.alpha = 1.0
 		southImageView.frame = CGRectMake(0, 0, btnWth, btnHth)
 		showPhotosButtonSouth.addSubview(southImageView)
 		let southLabel: UILabel = UILabel()
-		southLabel.text = "南部から探す"
+		southLabel.text = "それ以上の世代向け"
 		southLabel.textColor = UIColor.whiteColor()
 		southLabel.textAlignment = .Center
 		southLabel.frame = CGRectMake(btnWth / 2 - (labelSize.width / 2), btnHth / 2 - (labelSize.height / 2), labelSize.width, labelSize.height)
@@ -116,12 +131,15 @@ class AgeSelectViewController: UIViewController {
 		//        showPhotosButtonSouth.setTitle("南部から探す", forState: .Normal)
 		//        showPhotosButtonSouth.addTarget(self, action: "showPhotos:", forControlEvents: .TouchUpInside)
 		self.view.addSubview(showPhotosButtonSouth)
+		
 	}
 	
 	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		let sender: UITouch = touches.first!
 		print(sender.view!.tag)
-		self.delegate.showsID = sender.view!.tag
+		self.delegate.showsID = -1
+		self.delegate.categoryID = -1
+		self.delegate.ageID = sender.view!.tag
 		
 		let photos: PhotoCollectionViewController = PhotoCollectionViewController()
 		let myNavi: UINavigationController = UINavigationController(rootViewController: photos)
